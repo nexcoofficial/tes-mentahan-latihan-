@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexco - Advanced Landing Page Generator</title>
-
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Lato:wght@100;300;400;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
     <style>
-        /* Root Variables - Nexco Brand Colors (Synced with OrderOnline.id Logo) */
+        /* Root Variables - Nexco Brand Colors */
         :root {
             --nexco-primary: #1a237e;
             --nexco-secondary: #303f9f;
@@ -35,7 +35,7 @@
             --gray-700: #616161;
             --gray-800: #424242;
             --gray-900: #212121;
-
+            
             /* Gradients */
             --gradient-primary: linear-gradient(135deg, #1a237e 0%, #303f9f 50%, #3f51b5 100%);
             --gradient-accent: linear-gradient(135deg, #3f51b5 0%, #7986cb 100%);
@@ -378,129 +378,7 @@
             line-height: 1.6;
         }
 
-        /* Testimonial Section (Shopee-like) */
-        .testimonials {
-            padding: 5rem 0;
-            background: var(--gray-50);
-        }
-
-        .testimonial-carousel {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .testimonial-card {
-            flex: 0 0 calc(33.33% - 1rem);
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            margin: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .testimonial-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .testimonial-info h4 {
-            font-size: 1rem;
-            color: var(--nexco-primary);
-            margin: 0;
-        }
-
-        .testimonial-rating {
-            display: flex;
-            gap: 0.25rem;
-        }
-
-        .testimonial-rating i {
-            color: var(--nexco-gold);
-            font-size: 1rem;
-        }
-
-        .testimonial-text {
-            font-size: 0.9rem;
-            color: var(--gray-800);
-            line-height: 1.5;
-        }
-
-        .testimonial-text strong {
-            color: var(--nexco-primary);
-        }
-
-        .testimonial-media {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .testimonial-media img,
-        .testimonial-media video {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .testimonial-media img:hover,
-        .testimonial-media video:hover {
-            transform: scale(1.05);
-        }
-
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .carousel-btn {
-            background: var(--nexco-primary);
-            color: var(--white);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .carousel-btn:hover {
-            background: var(--nexco-secondary);
-        }
-
-        @media (max-width: 768px) {
-            .testimonial-card {
-                flex: 0 0 calc(100% - 1rem);
-            }
-        }
-
-        /* Form Section */
+        /* Main Form Section */
         .form-section {
             padding: 5rem 0;
             background: var(--gray-50);
@@ -880,102 +758,6 @@
             color: var(--nexco-secondary);
         }
 
-        /* Testimonial Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1002;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            background: var(--white);
-            max-width: 600px;
-            width: 90%;
-            padding: 2rem;
-            border-radius: 16px;
-            position: relative;
-            animation: zoomIn 0.3s ease-out;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--gray-600);
-        }
-
-        .lightbox-media {
-            width: 100%;
-            max-height: 400px;
-            object-fit: contain;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-        }
-
-        .lightbox-text {
-            color: var(--gray-800);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        /* Social Proof Popup */
-        .social-proof-popup {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            background: var(--white);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(26, 35, 126, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            max-width: 300px;
-            z-index: 1001;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-
-        .social-proof-popup.active {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .social-proof-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .social-proof-text {
-            font-size: 0.9rem;
-            color: var(--gray-800);
-        }
-
-        .social-proof-text strong {
-            color: var(--nexco-primary);
-        }
-
         /* Result Section */
         .result-section {
             display: none;
@@ -1146,20 +928,20 @@
             .nav-actions {
                 gap: 0.5rem;
             }
-
+            
             .nav-btn {
                 padding: 0.5rem 1rem;
                 font-size: 0.85rem;
             }
-
+            
             .hero h1 {
                 font-size: 3.5rem;
             }
-
+            
             .features-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
-
+            
             .form-grid {
                 grid-template-columns: 1fr;
             }
@@ -1169,52 +951,44 @@
             .nav-container {
                 padding: 0 1rem;
             }
-
+            
             .brand-name {
                 font-size: 1.25rem;
             }
-
+            
             .hero {
                 padding-top: 120px;
             }
-
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
-
+            
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
             }
-
+            
             .section-title {
                 font-size: 2rem;
             }
-
+            
             .form-container {
                 padding: 0 1rem;
             }
-
+            
             .form-card {
                 padding: 1.5rem;
             }
-
+            
             .generate-actions {
                 flex-direction: column;
                 align-items: center;
             }
-
+            
             .generate-button {
                 width: 100%;
                 max-width: 300px;
-            }
-
-            .social-proof-popup {
-                left: 1rem;
-                right: 1rem;
-                bottom: 1rem;
-                max-width: none;
-                width: calc(100% - 2rem);
             }
         }
 
@@ -1250,7 +1024,7 @@
                 <img src="https://cdn.orderonline.id/uploads/images_7847141758725198821.png" alt="Nexco Logo" class="logo">
                 <span class="brand-name">Nexco</span>
             </div>
-
+            
             <div class="nav-actions">
                 <a href="https://enzostvs-deepsite.hf.space/projects/new" target="_blank" class="nav-btn secondary">
                     <i class="fas fa-external-link-alt"></i>
@@ -1274,11 +1048,11 @@
             <div class="shape triangle shape-5"></div>
             <div class="shape square shape-6"></div>
         </div>
-
+        
         <div class="hero-content">
             <h1>Advanced Landing Page Generator</h1>
-            <p>Buat landing page profesional dan video promosi dengan AI teknologi terdepan. Solusi lengkap untuk konversi maksimal.</p>
-
+            <p>Buat landing page profesional dan video promosi dengan AI teknologi terdepan. Solusi complete untuk konversi maksimal.</p>
+            
             <div class="hero-actions">
                 <button class="cta-button" onclick="scrollToGenerator()">
                     <i class="fas fa-magic"></i>
@@ -1299,64 +1073,42 @@
                 <h2 class="section-title">Fitur Unggulan Nexco</h2>
                 <p class="section-subtitle">Platform all-in-one untuk kebutuhan digital marketing dan landing page profesional</p>
             </div>
-
+            
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-brain"></i></div>
                     <h3>AI-Powered Generator</h3>
                     <p>Teknologi AI canggih untuk menghasilkan landing page dan prompt berkualitas tinggi</p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-code"></i></div>
                     <h3>HTML Ready</h3>
                     <p>Generate kode HTML siap pakai atau prompt untuk AI builder lainnya</p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-video"></i></div>
                     <h3>Video Generator</h3>
                     <p>Integrasi dengan Tonskay AI untuk membuat video promosi yang menarik</p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-palette"></i></div>
                     <h3>Custom Design</h3>
                     <p>Pilihan warna otomatis dan font premium untuk tampilan yang memukau</p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-comments"></i></div>
                     <h3>Smart Testimonial</h3>
                     <p>Sistem testimoni dengan lightbox dan carousel seperti marketplace populer</p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Social Proof</h3>
                     <p>Popup notifikasi customer real-time untuk meningkatkan konversi</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Section (Shopee-like) -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Testimoni Pelanggan</h2>
-                <p class="section-subtitle">Lihat apa kata pelanggan tentang produk kami</p>
-            </div>
-
-            <div class="testimonial-carousel">
-                <div class="testimonial-track" id="testimonialTrack"></div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev" onclick="prevTestimonial()">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next" onclick="nextTestimonial()">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -1380,7 +1132,7 @@
                             <p>Detail lengkap tentang produk atau layanan Anda</p>
                         </div>
                     </div>
-
+                    
                     <div class="form-grid">
                         <div class="form-group">
                             <label class="form-label">Nama Produk <span class="required">*</span></label>
@@ -1389,7 +1141,7 @@
                                 <input type="text" id="productName" placeholder="Contoh: Hijab Premium Silk">
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
                             <label class="form-label">Kategori Produk <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1437,19 +1189,10 @@
                                     <option value="property">Property & Real Estate</option>
                                     <option value="investasi">Investasi & Trading</option>
                                     <option value="keuangan">Layanan Keuangan</option>
-                                    <option value="kamera">Kamera & Fotografi</option>
-                                    <option value="gaming">Gaming & Aksesoris</option>
-                                    <option value="musik">Musik & Alat Musik</option>
-                                    <option value="hobi">Hobi & Koleksi</option>
-                                    <option value="hewan">Hewan Peliharaan</option>
-                                    <option value="pertanian">Pertanian & Agrikultur</option>
-                                    <option value="kerajinan">Kerajinan Tangan</option>
-                                    <option value="event">Event & Hiburan</option>
-                                    <option value="wedding">Pernikahan & Acara</option>
                                 </select>
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
                             <label class="form-label">Harga Asli <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1457,7 +1200,7 @@
                                 <input type="number" id="originalPrice" placeholder="299000">
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
                             <label class="form-label">Harga Diskon</label>
                             <div class="input-wrapper">
@@ -1465,7 +1208,7 @@
                                 <input type="number" id="discountPrice" placeholder="199000">
                             </div>
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label class="form-label">Deskripsi Produk <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1487,7 +1230,7 @@
                             <p>Pilih kombinasi font yang sesuai dengan brand Anda</p>
                         </div>
                     </div>
-
+                    
                     <div class="form-grid">
                         <div class="form-group">
                             <label class="form-label">Font Heading <span class="required">*</span></label>
@@ -1507,11 +1250,10 @@
                                     <option value="DM Sans">DM Sans - Modern Geometric</option>
                                     <option value="Space Grotesk">Space Grotesk - Tech Sans Serif</option>
                                     <option value="Manrope">Manrope - Contemporary Sans Serif</option>
-                                    <option value="Source Sans Pro">Source Sans Pro - Professional Serif</option>
                                 </select>
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
                             <label class="form-label">Font Body <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1530,7 +1272,6 @@
                                     <option value="Montserrat">Montserrat - Strong Body Text</option>
                                     <option value="DM Sans">DM Sans - Geometric Body</option>
                                     <option value="Manrope">Manrope - Contemporary Body</option>
-                                    <option value="Raleway">Raleway - Elegant Reading</option>
                                 </select>
                             </div>
                         </div>
@@ -1548,7 +1289,7 @@
                             <p>Tentukan skema warna dan gaya desain landing page</p>
                         </div>
                     </div>
-
+                    
                     <div class="form-grid">
                         <div class="form-group">
                             <label class="form-label">Skema Warna <span class="required">*</span></label>
@@ -1571,12 +1312,11 @@
                                     <option value="midnight-navy">🌃 Midnight Navy - Navy Midnight</option>
                                     <option value="champagne-gold">🥂 Champagne Gold - Emas Sampanye</option>
                                     <option value="teal-modern">💎 Teal Modern - Teal Kontemporer</option>
-                                    <option value="pastel-soft">🌸 Pastel Soft - Pastel Lembut</option>
                                     <option value="custom">🎨 Custom Colors - Warna Kustom</option>
                                 </select>
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
                             <label class="form-label">Gaya Layout <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1602,10 +1342,13 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    <!-- Custom Color Picker -->
                     <div id="customColorSection" class="color-picker-container" style="display: none;">
                         <h4 style="margin-bottom: 1rem; color: var(--nexco-primary);">Custom Color Palette</h4>
-                        <div class="color-grid" id="colorGrid"></div>
+                        <div class="color-grid" id="colorGrid">
+                            <!-- Color options will be generated here -->
+                        </div>
                         <div class="form-grid" style="margin-top: 1rem;">
                             <div class="form-group">
                                 <label class="form-label">Primary Color</label>
@@ -1634,7 +1377,7 @@
                             <p>Upload atau masukkan link gambar dan video produk</p>
                         </div>
                     </div>
-
+                    
                     <div class="form-grid">
                         <div class="form-group full-width">
                             <label class="form-label">Gambar Utama Produk <span class="required">*</span></label>
@@ -1643,7 +1386,7 @@
                                 <input type="url" id="mainImage" placeholder="https://example.com/product-main-image.jpg">
                             </div>
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label class="form-label">Video Demo Produk</label>
                             <div class="input-wrapper">
@@ -1651,7 +1394,7 @@
                                 <input type="url" id="videoDemo" placeholder="https://youtube.com/watch?v=... atau https://vimeo.com/...">
                             </div>
                         </div>
-
+                        
                         <div class="form-group full-width">
                             <label class="form-label">Galeri Produk (URLs dipisah dengan enter)</label>
                             <div class="input-wrapper">
@@ -1673,7 +1416,7 @@
                             <p>Integrasi dengan sistem pemesanan OrderOnline</p>
                         </div>
                     </div>
-
+                    
                     <div class="form-grid">
                         <div class="form-group full-width">
                             <label class="form-label">Embed Code OrderOnline <span class="required">*</span></label>
@@ -1685,7 +1428,7 @@
                                 <i class="fas fa-info-circle"></i> Copy embed code dari dashboard OrderOnline.id Anda
                             </small>
                         </div>
-
+                        
                         <div class="form-group">
                             <label class="form-label">Nama Toko/Brand <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1693,7 +1436,7 @@
                                 <input type="text" id="storeName" placeholder="Toko Hijab Premium">
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
                             <label class="form-label">Nomor WhatsApp <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1712,204 +1455,1936 @@
                         <div class="section-number">6</div>
                         <div class="form-header-info">
                             <h3>Sistem Testimoni</h3>
-                            <p>Tambahkan testimoni customer dengan lightbox untuk meningkatkan kepercayaan</p>
+                            <p>Tambahkan testimoni customer untuk meningkatkan kepercayaan</p>
                         </div>
                     </div>
-
+                    
                     <div class="toggle-wrapper" id="testimonialWrapper">
                         <label class="toggle-label">Aktifkan Testimoni Customer</label>
                         <div class="toggle-switch" id="testimonialToggle" onclick="toggleTestimonial()">
                             <div class="toggle-slider"></div>
                         </div>
                     </div>
-
+                    
                     <div class="expandable-section" id="testimonialSection">
-                        <div id="testimonialFields">
-                            <!-- Testimonial 1 -->
-                            <div class="testimonial-entry" id="testimonial-1">
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label class="form-label">Nama Customer <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-user input-icon"></i>
-                                            <input type="text" name="testimonialName-1" placeholder="Nama Customer">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Foto Profil Customer</label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-image input-icon"></i>
-                                            <input type="url" name="testimonialAvatar-1" placeholder="https://example.com/customer.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Rating (1-5) <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-star input-icon"></i>
-                                            <input type="number" name="testimonialRating-1" min="1" max="5" value="5">
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width">
-                                        <label class="form-label">Media Testimoni (Foto/Video)</label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-images input-icon" style="top: 1.5rem;"></i>
-                                            <textarea name="testimonialMedia-1" placeholder="https://example.com/testimonial1.jpg&#10;https://example.com/testimonial1.mp4"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width">
-                                        <label class="form-label">Kata-kata Customer <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
-                                            <textarea name="testimonialText-1" placeholder="Bahan lembut, nyaman dipakai, jahitan rapi..."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width" style="text-align: right;">
-                                        <button type="button" class="action-btn danger" onclick="removeTestimonial(1)">
-                                            <i class="fas fa-trash"></i> Hapus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Testimonial 2 -->
-                            <div class="testimonial-entry" id="testimonial-2">
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label class="form-label">Nama Customer <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-user input-icon"></i>
-                                            <input type="text" name="testimonialName-2" placeholder="Nama Customer">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Foto Profil Customer</label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-image input-icon"></i>
-                                            <input type="url" name="testimonialAvatar-2" placeholder="https://example.com/customer.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Rating (1-5) <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-star input-icon"></i>
-                                            <input type="number" name="testimonialRating-2" min="1" max="5" value="5">
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width">
-                                        <label class="form-label">Media Testimoni (Foto/Video)</label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-images input-icon" style="top: 1.5rem;"></i>
-                                            <textarea name="testimonialMedia-2" placeholder="https://example.com/testimonial2.jpg&#10;https://example.com/testimonial2.mp4"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width">
-                                        <label class="form-label">Kata-kata Customer <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
-                                            <textarea name="testimonialText-2" placeholder="Bahan lembut, nyaman dipakai, jahitan rapi..."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width" style="text-align: right;">
-                                        <button type="button" class="action-btn danger" onclick="removeTestimonial(2)">
-                                            <i class="fas fa-trash"></i> Hapus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Testimonial 3 -->
-                            <div class="testimonial-entry" id="testimonial-3">
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label class="form-label">Nama Customer <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-user input-icon"></i>
-                                            <input type="text" name="testimonialName-3" placeholder="Nama Customer">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Foto Profil Customer</label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-image input-icon"></i>
-                                            <input type="url" name="testimonialAvatar-3" placeholder="https://example.com/customer.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Rating (1-5) <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-star input-icon"></i>
-                                            <input type="number" name="testimonialRating-3" min="1" max="5" value="5">
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width">
-                                        <label class="form-label">Media Testimoni (Foto/Video)</label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-images input-icon" style="top: 1.5rem;"></i>
-                                            <textarea name="testimonialMedia-3" placeholder="https://example.com/testimonial3.jpg&#10;https://example.com/testimonial3.mp4"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width">
-                                        <label class="form-label">Kata-kata Customer <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
-                                            <textarea name="testimonialText-3" placeholder="Bahan lembut, nyaman dipakai, jahitan rapi..."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width" style="text-align: right;">
-                                        <button type="button" class="action-btn danger" onclick="removeTestimonial(3)">
-                                            <i class="fas fa-trash"></i> Hapus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Testimonial 4 -->
-                            <div class="testimonial-entry" id="testimonial-4">
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label class="form-label">Nama Customer <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-user input-icon"></i>
-                                            <input type="text" name="testimonialName-4" placeholder="Nama Customer">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Foto Profil Customer</label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-image input-icon"></i>
-                                            <input type="url" name="testimonialAvatar-4" placeholder="https://example.com/customer.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Rating (1-5) <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-star input-icon"></i>
-                                            <input type="number" name="testimonialRating-4" min="1" max="5" value="5">
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width">
-                                        <label class="form-label">Media Testimoni (Foto/Video)</label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-images input-icon" style="top: 1.5rem;"></i>
-                                            <textarea name="testimonialMedia-4" placeholder="https://example.com/testimonial4.jpg&#10;https://example.com/testimonial4.mp4"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width">
-                                        <label class="form-label">Kata-kata Customer <span class="required">*</span></label>
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
-                                            <textarea name="testimonialText-4" placeholder="Bahan lembut, nyaman dipakai, jahitan rapi..."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group full-width" style="text-align: right;">
-                                        <button type="button" class="action-btn danger" onclick="removeTestimonial(4)">
-                                            <i class="fas fa-trash"></i> Hapus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="testimonialFields"></div>
                         <div style="text-align: center; margin-top: 1.5rem;">
                             <button type="button" class="action-btn" onclick="addTestimonial()">
                                 <i class="fas fa-plus"></i> Tambah Testimoni
                             </button>
                         </div>
                     </div>
-                </
+                </div>
+            </div>
+
+            <!-- Section 7: Social Proof System -->
+            <div class="form-section-wrapper">
+                <div class="form-card">
+                    <div class="form-header">
+                        <div class="section-number">7</div>
+                        <div class="form-header-info">
+                            <h3>Social Proof System</h3>
+                            <p>Popup notifikasi customer untuk meningkatkan konversi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="toggle-wrapper" id="socialProofWrapper">
+                        <label class="toggle-label">Aktifkan Social Proof Popup</label>
+                        <div class="toggle-switch" id="socialProofToggle" onclick="toggleSocialProof()">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="expandable-section" id="socialProofSection">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Interval Popup (detik)</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-clock input-icon"></i>
+                                    <input type="number" id="popupInterval" value="8" min="3" max="30">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Durasi Tampil (detik)</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-stopwatch input-icon"></i>
+                                    <input type="number" id="popupDuration" value="5" min="2" max="15">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label class="form-label">Nama Customer Indonesia (pisah dengan koma)</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-users input-icon"></i>
+                                    <input type="text" id="customerNames" value="Sari, Dewi, Maya, Putri, Rina, Indira, Kartika, Lestari, Permata, Vina, Dina, Anisa, Fitri, Novi, Ratna" placeholder="Nama1, Nama2, Nama3...">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label class="form-label">Kota di Indonesia (pisah dengan koma)</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-map-marker-alt input-icon"></i>
+                                    <input type="text" id="customerCities" value="Jakarta, Surabaya, Bandung, Medan, Bekasi, Tangerang, Depok, Semarang, Palembang, Makassar, Yogyakarta, Malang, Bogor, Batam, Denpasar" placeholder="Kota1, Kota2, Kota3...">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label class="form-label">Link Foto Avatar Customer</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-image input-icon"></i>
+                                    <input type="url" id="customerAvatar" placeholder="https://example.com/avatar-customer.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 8: Target & Marketing -->
+            <div class="form-section-wrapper">
+                <div class="form-card">
+                    <div class="form-header">
+                        <div class="section-number">8</div>
+                        <div class="form-header-info">
+                            <h3>Target & Marketing</h3>
+                            <p>Tentukan target audience dan strategi pemasaran</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label class="form-label">Target Audience <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-users input-icon"></i>
+                                <input type="text" id="targetAudience" placeholder="Contoh: Wanita muslimah usia 25-40 tahun yang aktif, modern, dan peduli fashion">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label class="form-label">Unique Selling Point <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-star input-icon"></i>
+                                <input type="text" id="uniqueSellingPoint" placeholder="Contoh: Bahan premium dengan teknologi cooling yang nyaman dipakai seharian">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label class="form-label">Catatan Tambahan & Request Khusus</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-sticky-note input-icon" style="top: 1.5rem;"></i>
+                                <textarea id="additionalNotes" placeholder="Tambahkan informasi khusus, request fitur tertentu, atau detail lain yang ingin dimasukkan..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Generator Section -->
+            <div class="video-section">
+                <div class="video-header">
+                    <h3><i class="fas fa-video"></i> Generate Video Promosi</h3>
+                    <p>Buat video promosi yang menarik dengan Tonskay AI</p>
+                </div>
+                
+                <div class="login-info">
+                    <h4><i class="fas fa-key"></i> Butuh Akses Login?</h4>
+                    <p>Untuk menggunakan Tonskay AI, hubungi admin untuk mendapatkan akses login:</p>
+                    <a href="https://wa.me/6281225681788?text=Halo%20admin,%20saya%20butuh%20akses%20login%20untuk%20Tonskay%20AI.%20Mohon%20berikan%20detail%20loginnya." target="_blank" class="whatsapp-contact">
+                        <i class="fab fa-whatsapp"></i>
+                        +62 812-2568-1788
+                    </a>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="https://tonskay.com/tonskay-ai/#pricing" target="_blank" class="action-btn" style="background: var(--gradient-gold); color: var(--nexco-primary); font-size: 1.1rem; padding: 1rem 2rem;">
+                        <i class="fas fa-video"></i>
+                        Generate Video di Tonskay AI
+                    </a>
+                </div>
+            </div>
+
+            <!-- Generate Section -->
+            <div class="generate-section">
+                <div class="generate-actions">
+                    <button type="button" class="generate-button" onclick="generateHTML()">
+                        <i class="fas fa-code"></i>
+                        Generate HTML Landing Page
+                    </button>
+                    
+                    <button type="button" class="generate-button secondary" onclick="generatePrompt()">
+                        <i class="fas fa-magic"></i>
+                        Generate AI Prompt
+                    </button>
+                </div>
+                
+                <p style="margin-top: 1rem; color: var(--gray-600); font-size: 0.9rem;">
+                    Pilih HTML untuk mendapatkan kode siap pakai, atau AI Prompt untuk digunakan di platform AI builder lainnya
+                </p>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading" id="loadingState">
+                <div class="spinner"></div>
+                <p style="margin-top: 1rem; color: var(--gray-600);">Sedang menghasilkan konten premium...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Section -->
+    <section class="result-section" id="resultSection">
+        <div class="container">
+            <div class="result-header">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Berhasil Dihasilkan!</h2>
+                <p style="color: var(--gray-600);">Konten premium Anda telah siap digunakan</p>
+            </div>
+            
+            <div class="result-tabs">
+                <button class="result-tab active" onclick="switchTab('html')">HTML Landing Page</button>
+                <button class="result-tab" onclick="switchTab('prompt')">AI Prompt</button>
+            </div>
+            
+            <div class="result-content active" id="htmlContent">
+                <div class="code-output">
+                    <button class="copy-button" onclick="copyContent('html')">
+                        <i class="far fa-copy"></i>
+                        <span>Copy HTML</span>
+                    </button>
+                    <pre id="htmlCode"></pre>
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p style="color: var(--gray-600); margin-bottom: 1rem;">Kode HTML siap untuk di-deploy ke GitHub, hosting, atau platform web lainnya</p>
+                    <a href="https://github.com" target="_blank" class="action-btn">
+                        <i class="fab fa-github"></i>
+                        Deploy ke GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <div class="result-content" id="promptContent">
+                <div class="prompt-output">
+                    <button class="copy-button" onclick="copyContent('prompt')">
+                        <i class="far fa-copy"></i>
+                        <span>Copy Prompt</span>
+                    </button>
+                    <div id="promptText"></div>
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p style="color: var(--gray-600); margin-bottom: 1rem;">Gunakan prompt ini di Claude, ChatGPT, atau AI builder favorit Anda</p>
+                    <a href="https://enzostvs-deepsite.hf.space/projects/new" target="_blank" class="action-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        Buka AI DeepSite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Berhasil!</span>
+    </div>
+
+    <script>
+        // Global variables
+        let testimonialCount = 0;
+        let currentTab = 'html';
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeColorPicker();
+            setupEventListeners();
+        });
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Color scheme change
+            document.getElementById('colorScheme').addEventListener('change', function() {
+                const customSection = document.getElementById('customColorSection');
+                if (this.value === 'custom') {
+                    customSection.style.display = 'block';
+                } else {
+                    customSection.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize color picker
+        function initializeColorPicker() {
+            const colorGrid = document.getElementById('colorGrid');
+            const predefinedColors = [
+                '#1a237e', '#303f9f', '#3f51b5', '#7986cb',
+                '#c5cae9', '#ffc107', '#ff9800', '#ff5722',
+                '#e91e63', '#9c27b0', '#673ab7', '#2196f3',
+                '#00bcd4', '#009688', '#4caf50', '#8bc34a',
+                '#cddc39', '#ffeb3b', '#ff9800', '#795548'
+            ];
+            
+            predefinedColors.forEach(color => {
+                const colorOption = document.createElement('div');
+                colorOption.className = 'color-option';
+                colorOption.style.backgroundColor = color;
+                colorOption.onclick = () => selectColor(colorOption, color);
+                colorGrid.appendChild(colorOption);
+            });
+        }
+
+        // Select color function
+        function selectColor(element, color) {
+            document.querySelectorAll('.color-option').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        // Navigation functions
+        function scrollToGenerator() {
+            document.getElementById('generator').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toggle functions
+        function toggleTestimonial() {
+            const toggle = document.getElementById('testimonialToggle');
+            const wrapper = document.getElementById('testimonialWrapper');
+            const section = document.getElementById('testimonialSection');
+            
+            toggle.classList.toggle('active');
+            wrapper.classList.toggle('active');
+            section.classList.toggle('active');
+            
+            if (toggle.classList.contains('active') && testimonialCount === 0) {
+                addTestimonial();
+                addTestimonial();
+                addTestimonial();
+            }
+        }
+
+        function toggleSocialProof() {
+            const toggle = document.getElementById('socialProofToggle');
+            const wrapper = document.getElementById('socialProofWrapper');
+            const section = document.getElementById('socialProofSection');
+            
+            toggle.classList.toggle('active');
+            wrapper.classList.toggle('active');
+            section.classList.toggle('active');
+        }
+
+        // Testimonial management
+        function addTestimonial() {
+            testimonialCount++;
+            const container = document.getElementById('testimonialFields');
+            
+            const testimonialCard = document.createElement('div');
+            testimonialCard.className = 'form-card';
+            testimonialCard.id = `testimonial-${testimonialCount}`;
+            testimonialCard.style.marginBottom = '1.5rem';
+            
+            testimonialCard.innerHTML = `
+                <div class="form-header">
+                    <div style="width: 40px; height: 40px; background: var(--nexco-accent); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 600;">${testimonialCount}</div>
+                    <div class="form-header-info">
+                        <h3>Testimoni ${testimonialCount}</h3>
+                        <p>Data testimoni customer</p>
+                    </div>
+                    <button type="button" class="action-btn danger" onclick="removeTestimonial(${testimonialCount})" style="margin-left: auto;">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Nama Customer</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="testimonial${testimonialCount}Name" placeholder="Nama customer">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Rating Bintang</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-star input-icon"></i>
+                            <select id="testimonial${testimonialCount}Rating">
+                                <option value="5">⭐⭐⭐⭐⭐ (5 Bintang)</option>
+                                <option value="4">⭐⭐⭐⭐ (4 Bintang)</option>
+                                <option value="3">⭐⭐⭐ (3 Bintang)</option>
+                                <option value="2">⭐⭐ (2 Bintang)</option>
+                                <option value="1">⭐ (1 Bintang)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Foto Profil Customer</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-image input-icon"></i>
+                            <input type="url" id="testimonial${testimonialCount}Avatar" placeholder="https://example.com/customer-avatar.jpg">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Foto/Video Review</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-camera input-icon"></i>
+                            <input type="url" id="testimonial${testimonialCount}Media" placeholder="https://example.com/review-photo.jpg">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label class="form-label">Teks Testimoni</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-quote-left input-icon" style="top: 1.5rem;"></i>
+                            <textarea id="testimonial${testimonialCount}Text" placeholder="Bagus banget! Bahan lembut, nyaman dipakai, jahitan rapi. Sangat recommended!"></textarea>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(testimonialCard);
+            showToast('Testimoni berhasil ditambahkan');
+        }
+
+        function removeTestimonial(id) {
+            const element = document.getElementById(`testimonial-${id}`);
+            if (element) {
+                element.remove();
+                showToast('Testimoni berhasil dihapus');
+            }
+        }
+
+        // Form validation
+        function validateForm() {
+            const required = [
+                'productName', 'productCategory', 'originalPrice', 'productDescription',
+                'headingFont', 'bodyFont', 'colorScheme', 'layoutStyle',
+                'mainImage', 'orderOnlineEmbed', 'storeName', 'whatsappNumber',
+                'targetAudience', 'uniqueSellingPoint'
+            ];
+            
+            for (let field of required) {
+                const element = document.getElementById(field);
+                if (!element || !element.value.trim()) {
+                    if (element) element.focus();
+                    showToast(`Mohon lengkapi field: ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`, 'error');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Collect form data
+        function collectFormData() {
+            const data = {
+                productName: document.getElementById('productName').value,
+                productCategory: document.getElementById('productCategory').value,
+                originalPrice: document.getElementById('originalPrice').value,
+                discountPrice: document.getElementById('discountPrice').value,
+                productDescription: document.getElementById('productDescription').value,
+                headingFont: document.getElementById('headingFont').value,
+                bodyFont: document.getElementById('bodyFont').value,
+                colorScheme: document.getElementById('colorScheme').value,
+                layoutStyle: document.getElementById('layoutStyle').value,
+                mainImage: document.getElementById('mainImage').value,
+                videoDemo: document.getElementById('videoDemo').value,
+                productGallery: document.getElementById('productGallery').value,
+                orderOnlineEmbed: document.getElementById('orderOnlineEmbed').value,
+                storeName: document.getElementById('storeName').value,
+                whatsappNumber: document.getElementById('whatsappNumber').value,
+                targetAudience: document.getElementById('targetAudience').value,
+                uniqueSellingPoint: document.getElementById('uniqueSellingPoint').value,
+                additionalNotes: document.getElementById('additionalNotes').value
+            };
+
+            // Custom colors if selected
+            if (data.colorScheme === 'custom') {
+                data.customColors = {
+                    primary: document.getElementById('primaryColor').value,
+                    secondary: document.getElementById('secondaryColor').value,
+                    accent: document.getElementById('accentColor').value
+                };
+            }
+
+            // Testimonials
+            const testimonialToggle = document.getElementById('testimonialToggle');
+            if (testimonialToggle.classList.contains('active')) {
+                data.testimonials = [];
+                for (let i = 1; i <= testimonialCount; i++) {
+                    const nameEl = document.getElementById(`testimonial${i}Name`);
+                    const textEl = document.getElementById(`testimonial${i}Text`);
+                    if (nameEl && textEl && nameEl.value && textEl.value) {
+                        data.testimonials.push({
+                            name: nameEl.value,
+                            rating: document.getElementById(`testimonial${i}Rating`).value,
+                            avatar: document.getElementById(`testimonial${i}Avatar`).value,
+                            media: document.getElementById(`testimonial${i}Media`).value,
+                            text: textEl.value
+                        });
+                    }
+                }
+            }
+
+            // Social proof
+            const socialProofToggle = document.getElementById('socialProofToggle');
+            if (socialProofToggle.classList.contains('active')) {
+                data.socialProof = {
+                    interval: document.getElementById('popupInterval').value,
+                    duration: document.getElementById('popupDuration').value,
+                    names: document.getElementById('customerNames').value,
+                    cities: document.getElementById('customerCities').value,
+                    avatar: document.getElementById('customerAvatar').value
+                };
+            }
+
+            return data;
+        }
+
+        // Generate HTML landing page
+        function generateHTML() {
+            if (!validateForm()) return;
+            
+            showLoading();
+            const data = collectFormData();
+            
+            setTimeout(() => {
+                const htmlCode = generateHTMLCode(data);
+                document.getElementById('htmlCode').textContent = htmlCode;
+                switchTab('html');
+                showResult();
+                hideLoading();
+                showToast('HTML landing page berhasil dihasilkan!', 'success');
+            }, 3000);
+        }
+
+        // Generate AI prompt
+        function generatePrompt() {
+            if (!validateForm()) return;
+            
+            showLoading();
+            const data = collectFormData();
+            
+            setTimeout(() => {
+                const promptText = generatePromptText(data);
+                document.getElementById('promptText').textContent = promptText;
+                switchTab('prompt');
+                showResult();
+                hideLoading();
+                showToast('AI prompt berhasil dihasilkan!', 'success');
+            }, 2500);
+        }
+
+        // Generate HTML code function
+        function generateHTMLCode(data) {
+            const colorSchemes = {
+                'luxury-black': { primary: '#000000', secondary: '#1a1a1a', accent: '#d4af37', light: '#f5f5f5' },
+                'royal-blue': { primary: '#1a237e', secondary: '#303f9f', accent: '#ffc107', light: '#e8eaf6' },
+                'emerald-green': { primary: '#00695c', secondary: '#00897b', accent: '#ff9800', light: '#e0f2f1' },
+                'wine-red': { primary: '#880e4f', secondary: '#c2185b', accent: '#ffc107', light: '#fce4ec' },
+                'sunset-orange': { primary: '#e65100', secondary: '#ff9800', accent: '#ffd54f', light: '#fff3e0' },
+                'purple-royal': { primary: '#4a148c', secondary: '#7b1fa2', accent: '#ffb74d', light: '#f3e5f5' },
+                'gold-luxury': { primary: '#ff8f00', secondary: '#ffa000', accent: '#37474f', light: '#fffde7' },
+                'silver-premium': { primary: '#455a64', secondary: '#607d8b', accent: '#ffc107', light: '#eceff1' }
+            };
+
+            const colors = data.colorScheme === 'custom' ? data.customColors : colorSchemes[data.colorScheme];
+            
+            return `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${data.productName} - ${data.storeName}</title>
+    <link href="https://fonts.googleapis.com/css2?family=${data.headingFont.replace(' ', '+')}:wght@300;400;500;600;700;800;900&family=${data.bodyFont.replace(' ', '+')}:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Advanced Landing Page Styles - Generated by Nexco */
+        :root {
+            --primary: ${colors.primary};
+            --secondary: ${colors.secondary};
+            --accent: ${colors.accent};
+            --light: ${colors.light};
+            --white: #ffffff;
+            --heading-font: '${data.headingFont}', serif;
+            --body-font: '${data.bodyFont}', sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: var(--primary);
+            background: var(--white);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* Product Section */
+        .product-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .product-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        /* OrderOnline Integration */
+        .order-section {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+        
+        .order-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>${data.productName}</h1>
+            <p>${data.uniqueSellingPoint}</p>
+            <a href="#order" class="cta-button">
+                <i class="fas fa-shopping-cart"></i> Pesan Sekarang
+            </a>
+        </div>
+    </section>
+    
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="container">
+            <div class="product-grid">
+                <div class="product-image">
+                    <img src="${data.mainImage}" alt="${data.productName}">
+                </div>
+                <div class="product-info">
+                    <h2>${data.productName}</h2>
+                    <div class="price">
+                        ${data.discountPrice ? `<span class="original-price">Rp ${parseInt(data.originalPrice).toLocaleString('id-ID')}</span>` : ''}
+                        Rp ${parseInt(data.discountPrice || data.originalPrice).toLocaleString('id-ID')}
+                    </div>
+                    <p>${data.productDescription}</p>
+                    <a href="#order" class="cta-button">
+                        <i class="fas fa-whatsapp"></i> Order Via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Order Section -->
+    <section class="order-section" id="order">
+        <div class="order-container">
+            <h2>Pesan ${data.productName} Sekarang</h2>
+            <p>Gunakan form di bawah untuk memesan langsung</p>
+            
+            <!-- OrderOnline Integration -->
+            ${data.orderOnlineEmbed}
+            
+            <!-- WhatsApp Button -->
+            <div style="margin-top: 2rem;">
+                <a href="https://wa.me/${data.whatsappNumber}?text=Halo%20${data.storeName},%20saya%20tertarik%20dengan%20${data.productName}" 
+                   target="_blank" class="cta-button">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    ${data.testimonials && data.testimonials.length > 0 ? `
+    <!-- Testimonial Section -->
+    <section class="testimonial-section" style="padding: 5rem 0; background: var(--light);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary);">Testimoni Customer</h2>
+            <div class="testimonial-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                ${data.testimonials.map(testimonial => `
+                    <div class="testimonial-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            ${testimonial.avatar ? `<img src="${testimonial.avatar}" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem;">` : ''}
+                            <div>
+                                <h4 style="color: var(--primary);">${testimonial.name}</h4>
+                                <div style="color: #ffc107;">${'⭐'.repeat(testimonial.rating)}</div>
+                            </div>
+                        </div>
+                        <p style="color: #666; font-style: italic; margin-bottom: 1rem;">"${testimonial.text}"</p>
+                        ${testimonial.media ? `<img src="${testimonial.media}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer;" onclick="openLightbox('${testimonial.media}')">` : ''}
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox -->
+    <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; cursor: pointer;" onclick="closeLightbox()">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%;">
+            <img id="lightboxImg" style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+        <span style="position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer;" onclick="closeLightbox()">&times;</span>
+    </div>
+    ` : ''}
+
+    ${data.socialProof ? `
+    <!-- Social Proof Popup -->
+    <div id="socialProof" style="position: fixed; top: 20px; right: 20px; background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transform: translateX(400px); transition: transform 0.5s ease; z-index: 1000; max-width: 300px; border-left: 4px solid var(--accent);">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div id="socialAvatar" style="width: 40px; height: 40px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;"></div>
+            <div>
+                <div id="socialName" style="font-weight: 600; color: var(--primary); font-size: 0.9rem;"></div>
+                <div id="socialMessage" style="font-size: 0.8rem; color: #666;"></div>
+            </div>
+        </div>
+    </div>
+    ` : ''}
+    
+    <script>
+        ${data.testimonials && data.testimonials.length > 0 ? `
+        // Lightbox functions
+        function openLightbox(src) {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightboxImg').src = src;
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        ` : ''}
+
+        ${data.socialProof ? `
+        // Social Proof System
+        const customerNames = [${data.socialProof.names.split(',').map(name => `"${name.trim()}"`).join(', ')}];
+        const customerCities = [${data.socialProof.cities.split(',').map(city => `"${city.trim()}"`).join(', ')}];
+        
+        function showSocialProof() {
+            const randomName = customerNames[Math.floor(Math.random() * customerNames.length)];
+            const randomCity = customerCities[Math.floor(Math.random() * customerCities.length)];
+            const popup = document.getElementById('socialProof');
+            
+            document.getElementById('socialAvatar').textContent = randomName.charAt(0);
+            document.getElementById('socialName').textContent = randomName + ' dari ' + randomCity;
+            document.getElementById('socialMessage').textContent = 'baru saja memesan ${data.productName}';
+            
+            popup.style.transform = 'translateX(0)';
+            
+            setTimeout(() => {
+                popup.style.transform = 'translateX(400px)';
+            }, ${data.socialProof.duration * 1000});
+        }
+        
+        // Start social proof after page load
+        setTimeout(showSocialProof, 3000);
+        setInterval(showSocialProof, ${data.socialProof.interval * 1000});
+        ` : ''}
+    </script>
+</body>
+</html>`;
+        }
+
+        // Generate AI prompt text
+        function generatePromptText(data) {
+            const colorSchemes = {
+                'luxury-black': 'Hitam Premium (#000000), Abu Gelap (#1a1a1a), Emas (#d4af37), Silver (#c0c0c0), Putih (#ffffff)',
+                'royal-blue': 'Biru Kerajaan (#1a237e), Biru Medium (#303f9f), Emas (#ffc107), Biru Muda (#e8eaf6), Putih (#ffffff)',
+                'emerald-green': 'Hijau Zamrud (#00695c), Hijau Medium (#00897b), Oranye (#ff9800), Hijau Muda (#e0f2f1), Putih (#ffffff)',
+                'wine-red': 'Merah Wine (#880e4f), Merah Medium (#c2185b), Emas (#ffc107), Pink Muda (#fce4ec), Putih (#ffffff)',
+                'sunset-orange': 'Oranye Gelap (#e65100), Oranye (#ff9800), Kuning Emas (#ffd54f), Oranye Muda (#fff3e0), Putih (#ffffff)',
+                'purple-royal': 'Ungu Kerajaan (#4a148c), Ungu Medium (#7b1fa2), Oranye Muda (#ffb74d), Ungu Muda (#f3e5f5), Putih (#ffffff)',
+                'gold-luxury': 'Emas Gelap (#ff8f00), Emas (#ffa000), Abu Gelap (#37474f), Kuning Muda (#fffde7), Putih (#ffffff)',
+                'silver-premium': 'Abu Biru (#455a64), Abu Medium (#607d8b), Emas (#ffc107), Abu Muda (#eceff1), Putih (#ffffff)',
+                'custom': `Primary: ${data.customColors?.primary || '#1a237e'}, Secondary: ${data.customColors?.secondary || '#3f51b5'}, Accent: ${data.customColors?.accent || '#ffc107'}`
+            };
+
+            const layoutStyles = {
+                'luxury-premium': 'Desain mewah premium dengan whitespace luas, tipografi elegan, efek glassmorphism, animasi halus, gradient mewah',
+                'modern-minimalist': 'Layout clean minimalis dengan fokus konten, navigasi simpel, warna monokromatik, micro-interactions',
+                'creative-artistic': 'Desain kreatif artistik dengan elemen visual unik, layout asimetris, warna bold, animasi kreatif',
+                'corporate-professional': 'Layout korporat profesional dengan struktur formal, warna konservatif, typography clean',
+                'fashion-stylish': 'Desain fashion forward dengan visual storytelling, layout magazine-style, typography bold, parallax',
+                'tech-futuristic': 'Layout tech futuristik dengan gradien modern, animasi code-style, dark mode, elemen cyberpunk',
+                'natural-organic': 'Desain natural organik dengan tekstur alami, warna earth-tone, ilustrasi botanical, eco-friendly',
+                'islamic-elegant': 'Desain islami elegan dengan ornamen geometric, kaligrafi modern, warna teal-gold, nuansa spiritual'
+            };
+
+            let prompt = `Buatkan landing page conversion-optimized yang sangat menarik untuk "${data.productName}" dengan spesifikasi premium berikut:
+
+🎯 INFORMASI PRODUK LENGKAP:
+- Nama Produk: ${data.productName}
+- Kategori: ${data.productCategory}
+- Harga Asli: Rp ${parseInt(data.originalPrice).toLocaleString('id-ID')}
+${data.discountPrice ? `- Harga Diskon: Rp ${parseInt(data.discountPrice).toLocaleString('id-ID')}` : ''}
+- Deskripsi Detail: ${data.productDescription}
+- Target Audience: ${data.targetAudience}
+- Unique Selling Point: ${data.uniqueSellingPoint}
+- Nama Toko/Brand: ${data.storeName}
+- WhatsApp: ${data.whatsappNumber}
+
+🎨 DESAIN & TYPOGRAPHY PREMIUM:
+- Font Heading: ${data.headingFont}
+- Font Body: ${data.bodyFont}
+- Skema Warna: ${colorSchemes[data.colorScheme]}
+- Gaya Layout: ${layoutStyles[data.layoutStyle]}
+
+📸 VISUAL ASSETS:
+- Gambar Utama: ${data.mainImage}
+${data.videoDemo ? `- Video Demo: ${data.videoDemo}` : ''}
+${data.productGallery ? `- Galeri Produk:\n${data.productGallery.split('\n').map(url => `  • ${url.trim()}`).join('\n')}` : ''}
+
+🛒 ORDERONLINE INTEGRATION:
+Embed Code (Styling Premium Required):
+${data.orderOnlineEmbed}
+
+Persyaratan Styling OrderOnline:
+- Form terintegrasi mulus dengan desain
+- Custom CSS override untuk styling konsisten
+- Background gradient matching tema
+- Efek glassmorphism dengan backdrop blur
+- Border radius dan padding premium
+- Font konsisten: ${data.headingFont} untuk heading, ${data.bodyFont} untuk body
+- Warna sesuai skema yang dipilih
+- Animasi hover yang smooth
+- Responsive sempurna mobile & desktop`;
+
+            // Add testimonials section
+            if (data.testimonials && data.testimonials.length > 0) {
+                prompt += `\n\n⭐ SISTEM TESTIMONI PREMIUM:
+WAJIB: Implementasi testimoni seperti Shopee dengan fitur lengkap:
+
+Data Testimoni:`;
+                
+                data.testimonials.forEach((testimonial, index) => {
+                    prompt += `\n\nTestimoni ${index + 1}:
+- Nama: ${testimonial.name}
+- Rating: ${testimonial.rating} bintang (tampilkan ⭐ kuning)
+- Avatar: ${testimonial.avatar}
+- Media Review: ${testimonial.media}
+- Testimoni: "${testimonial.text}"`;
+                });
+
+                prompt += `\n\nFITUR TESTIMONI REQUIREMENTS:
+1. SHOPEE-STYLE LAYOUT:
+   - Foto profil: bulat 50px dengan border subtle
+   - Rating bintang: warna kuning (#ffc107) size 16px
+   - Testimoni text: highlight keyword penting
+   - Media thumbnail: 100x100px rounded, hover effect
+   
+2. LIGHTBOX FUNCTIONALITY:
+   - Semua gambar testimoni clickable
+   - Popup overlay rgba(0,0,0,0.8)
+   - Image full-size centered dengan close button
+   - Smooth fade animations
+   - Click outside to close
+   
+3. CAROUSEL PREMIUM:
+   - Auto-scroll setiap 6 detik
+   - Manual navigation arrows
+   - Dot indicators responsive
+   - Touch swipe mobile support
+   - Pause on hover
+   
+4. RESPONSIVE GRID:
+   - Mobile: 1 testimoni per slide
+   - Tablet: 2 testimoni per slide
+   - Desktop: 3 testimoni per slide`;
+            }
+
+            // Add social proof section
+            if (data.socialProof) {
+                prompt += `\n\n👥 SOCIAL PROOF POPUP SYSTEM:
+WAJIB: Indonesian Customer Notifications dengan spesifikasi:
+
+Konfigurasi Social Proof:
+- Popup Interval: setiap ${data.socialProof.interval} detik
+- Display Duration: ${data.socialProof.duration} detik per popup
+- Customer Names: ${data.socialProof.names}
+- Customer Cities: ${data.socialProof.cities}
+${data.socialProof.avatar ? `- Avatar Image: ${data.socialProof.avatar}` : ''}
+
+TECHNICAL IMPLEMENTATION:
+1. AUTO-POPUP SYSTEM:
+   - Slide in dari kanan dengan smooth animation
+   - Fixed position top-right (20px margins)
+   - Auto-hide setelah ${data.socialProof.duration} detik
+   - Hover pause functionality
+   
+2. CONTENT DYNAMIC:
+   - Format: "[Nama] dari [Kota] baru saja memesan ${data.productName}"
+   - Random selection nama dan kota
+   - Timestamp realistis (1-15 menit lalu)
+   
+3. STYLING PREMIUM:
+   - Background: white dengan shadow elegant
+   - Border-left accent color
+   - Avatar: circular 40px dengan foto/initial
+   - Typography konsisten dengan theme
+   - Mobile responsive sizing
+   
+4. PERFORMANCE OPTIMIZED:
+   - Efficient timeout management
+   - Memory leak prevention
+   - Local storage integration
+   - Smooth animations 60fps`;
+            }
+
+            prompt += `\n\n📱 STRUKTUR LANDING PAGE PREMIUM:
+
+1. HERO SECTION PREMIUM
+   - Full viewport height dengan gradient overlay
+   - Background video/image yang stunning
+   - Headline impactful dengan ${data.headingFont}
+   - Subheadline compelling dengan ${data.bodyFont}
+   - Dual CTA buttons (Order + WhatsApp)
+   - Trust badges dan social proof indicators
+   - Animasi entrance yang smooth
+
+2. PRODUCT SHOWCASE PREMIUM
+   - Gallery dengan lightbox dan zoom
+   - 360° product view (jika tersedia)
+   - Video demo terintegrasi
+   - Feature highlights dengan icons
+   - Before/after comparisons
+   - Interactive product explorer
+
+3. BENEFITS & USP SECTION
+   - Icon-based feature grid responsive
+   - Animated counters dan statistik
+   - Problem-solution storytelling
+   - Visual infographics
+   - Comparison dengan kompetitor`;
+
+            if (data.testimonials && data.testimonials.length > 0) {
+                prompt += `\n\n4. TESTIMONI CUSTOMER SECTION
+   - Shopee-style layout dengan lightbox
+   - Carousel dengan smooth transitions
+   - Rating stars prominent
+   - Media preview expandable
+   - Social proof integration`;
+            }
+
+            prompt += `\n\n${data.testimonials ? '5' : '4'}. PRICING & URGENCY SECTION
+   - Harga dengan strikethrough effect
+   - Countdown timer untuk scarcity
+   - Bundle offers dengan savings highlight
+   - Guarantee badges dan warranty
+   - Payment methods dan security badges
+   
+${data.testimonials ? '6' : '5'}. ORDER FORM PREMIUM
+   - OrderOnline integration dengan custom styling
+   - Multi-step form dengan progress indicator
+   - Real-time validation dan feedback
+   - WhatsApp quick order alternative
+   - Security badges dan trust signals`;
+
+            if (data.socialProof) {
+                prompt += `\n\n${data.testimonials ? '7' : '6'}. SOCIAL PROOF NOTIFICATIONS
+   - Real-time popup customer notifications
+   - Indonesian names dan cities authentic
+   - Smooth slide animations dari kanan
+   - Mobile responsive dengan proper sizing`;
+            }
+
+            prompt += `\n\n${data.socialProof ? (data.testimonials ? '8' : '7') : (data.testimonials ? '7' : '6')}. FOOTER COMPREHENSIVE
+   - Company information lengkap
+   - Quick navigation links
+   - Social media integration
+   - Newsletter signup dengan incentive
+   - Legal pages dan policies
+   - Contact information complete
+
+🔧 TECHNICAL SPECIFICATIONS:
+
+TYPOGRAPHY SYSTEM:
+- Primary Font: ${data.headingFont} (weights: 300,400,500,600,700,800,900)
+- Secondary Font: ${data.bodyFont} (weights: 300,400,500,600,700,800,900)
+- Font loading: preload dengan font-display: swap
+- Responsive typography dengan clamp()
+- Perfect font pairing dan hierarchy
+
+ANIMATION & INTERACTIONS:
+- Smooth scroll behavior throughout
+- Parallax scrolling untuk depth
+- Reveal animations on scroll (Intersection Observer)
+- Hover effects pada interactive elements
+- Loading states dan skeleton screens
+- Micro-interactions untuk engagement`;
+
+            if (data.testimonials && data.testimonials.length > 0) {
+                prompt += `
+- Lightbox modal dengan smooth transitions
+- Carousel dengan touch gestures
+- Image lazy loading optimized`;
+            }
+
+            if (data.socialProof) {
+                prompt += `
+- Social proof dengan timer precision
+- Random selection algorithms
+- Performance optimized notifications`;
+            }
+
+            prompt += `
+
+PERFORMANCE OPTIMIZATION:
+- Critical CSS inline untuk above-fold
+- Image optimization: WebP dengan fallback
+- Lazy loading untuk images dan videos
+- Minified dan compressed assets
+- CDN delivery untuk fonts dan libraries
+- Core Web Vitals optimized (LCP, FID, CLS)
+
+CONVERSION OPTIMIZATION:
+- Exit-intent popup dengan offer
+- Sticky CTA saat scroll
+- Live chat integration ready
+- A/B testing structure ready
+- Heatmap tracking compatible
+- Analytics events tracking
+- Conversion funnel optimized
+
+RESPONSIVE & ACCESSIBILITY:
+- Mobile-first design approach
+- Touch-friendly interactions (44px minimum)
+- Keyboard navigation support
+- Screen reader compatible
+- WCAG 2.1 AA compliance
+- High contrast mode support
+- Reduced motion preferences
+
+SEO & METADATA:
+- Semantic HTML5 structure
+- Schema.org markup lengkap
+- Open Graph tags comprehensive
+- Twitter Card optimization
+- Meta descriptions compelling
+- Alt texts descriptive
+- Sitemap XML ready
+
+SECURITY & TRUST:
+- SSL certificate indicators
+- Privacy policy compliance
+- GDPR ready structure
+- Secure payment badges
+- Trust seals integration
+- Customer service contact prominent
+
+${data.additionalNotes ? `\nREQUEST KHUSUS USER:\n${data.additionalNotes}` : ''}
+
+FINAL DELIVERABLE REQUIREMENTS:
+1. HTML, CSS, JavaScript production-ready
+2. Cross-browser compatible (Chrome, Firefox, Safari, Edge)
+3. Performance score 95+ Google PageSpeed
+4. Mobile responsive perfect
+5. SEO optimized structure
+6. Conversion rate optimized
+7. All features functional dan tested
+8. Clean, commented, maintainable code
+9. Ready to deploy tanpa editing
+10. Includes semua integrations dan features specified
+
+Generate kode lengkap yang siap production! 🚀`;
+
+            return prompt;
+        }
+
+        // Result tab switching
+        function switchTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.result-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`[onclick="switchTab('${tab}')"]`).classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.result-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(`${tab}Content`).classList.add('active');
+            
+            currentTab = tab;
+        }
+
+        // Copy content function
+        function copyContent(type) {
+            const content = type === 'html' 
+                ? document.getElementById('htmlCode').textContent
+                : document.getElementById('promptText').textContent;
+            
+            navigator.clipboard.writeText(content).then(() => {
+                const button = document.querySelector(`[onclick="copyContent('${type}')"]`);
+                const originalText = button.innerHTML;
+                button.classList.add('copied');
+                button.innerHTML = '<i class="fas fa-check"></i> <span>Copied!</span>';
+                
+                showToast(`${type === 'html' ? 'HTML' : 'Prompt'} berhasil dicopy!`, 'success');
+                
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    button.innerHTML = originalText;
+                }, 3000);
+            }).catch(() => {
+                showToast('Gagal copy ke clipboard', 'error');
+            });
+        }
+
+        // Utility functions
+        function showLoading() {
+            document.getElementById('loadingState').classList.add('active');
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingState').classList.remove('active');
+        }
+
+        function showResult() {
+            document.getElementById('resultSection').classList.add('active');
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toast.className = `toast ${type}`;
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        setTimeout(() => {
+            document.querySelectorAll('.form-card, .feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(card);
+            });
+        }, 100);
+
+    <script>
+        // Global variables
+        let testimonialCount = 0;
+        let currentTab = 'html';
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeColorPicker();
+            setupEventListeners();
+            
+            // Make functions globally accessible
+            window.scrollToGenerator = scrollToGenerator;
+            window.toggleTestimonial = toggleTestimonial;
+            window.toggleSocialProof = toggleSocialProof;
+            window.addTestimonial = addTestimonial;
+            window.removeTestimonial = removeTestimonial;
+            window.generateHTML = generateHTML;
+            window.generatePrompt = generatePrompt;
+            window.switchTab = switchTab;
+            window.copyContent = copyContent;
+        });
+
+        // Navigation functions
+        function scrollToGenerator() {
+            const target = document.getElementById('generator');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Color scheme change
+            const colorSchemeSelect = document.getElementById('colorScheme');
+            if (colorSchemeSelect) {
+                colorSchemeSelect.addEventListener('change', function() {
+                    const customSection = document.getElementById('customColorSection');
+                    if (customSection) {
+                        if (this.value === 'custom') {
+                            customSection.style.display = 'block';
+                        } else {
+                            customSection.style.display = 'none';
+                        }
+                    }
+                });
+            }
+        }
+
+        // Initialize color picker
+        function initializeColorPicker() {
+            const colorGrid = document.getElementById('colorGrid');
+            if (colorGrid) {
+                const predefinedColors = [
+                    '#1a237e', '#303f9f', '#3f51b5', '#7986cb',
+                    '#c5cae9', '#ffc107', '#ff9800', '#ff5722',
+                    '#e91e63', '#9c27b0', '#673ab7', '#2196f3',
+                    '#00bcd4', '#009688', '#4caf50', '#8bc34a',
+                    '#cddc39', '#ffeb3b', '#ff9800', '#795548'
+                ];
+                
+                predefinedColors.forEach(color => {
+                    const colorOption = document.createElement('div');
+                    colorOption.className = 'color-option';
+                    colorOption.style.backgroundColor = color;
+                    colorOption.onclick = () => selectColor(colorOption, color);
+                    colorGrid.appendChild(colorOption);
+                });
+            }
+        }
+
+        // Select color function
+        function selectColor(element, color) {
+            document.querySelectorAll('.color-option').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        // Toggle functions
+        function toggleTestimonial() {
+            const toggle = document.getElementById('testimonialToggle');
+            const wrapper = document.getElementById('testimonialWrapper');
+            const section = document.getElementById('testimonialSection');
+            
+            if (toggle && wrapper && section) {
+                toggle.classList.toggle('active');
+                wrapper.classList.toggle('active');
+                section.classList.toggle('active');
+                
+                if (toggle.classList.contains('active') && testimonialCount === 0) {
+                    addTestimonial();
+                    addTestimonial();
+                    addTestimonial();
+                }
+            }
+        }
+
+        function toggleSocialProof() {
+            const toggle = document.getElementById('socialProofToggle');
+            const wrapper = document.getElementById('socialProofWrapper');
+            const section = document.getElementById('socialProofSection');
+            
+            if (toggle && wrapper && section) {
+                toggle.classList.toggle('active');
+                wrapper.classList.toggle('active');
+                section.classList.toggle('active');
+            }
+        }
+
+        // Testimonial management
+        function addTestimonial() {
+            testimonialCount++;
+            const container = document.getElementById('testimonialFields');
+            
+            if (container) {
+                const testimonialCard = document.createElement('div');
+                testimonialCard.className = 'form-card';
+                testimonialCard.id = `testimonial-${testimonialCount}`;
+                testimonialCard.style.marginBottom = '1.5rem';
+                
+                testimonialCard.innerHTML = `
+                    <div class="form-header">
+                        <div style="width: 40px; height: 40px; background: var(--nexco-accent); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 600;">${testimonialCount}</div>
+                        <div class="form-header-info">
+                            <h3>Testimoni ${testimonialCount}</h3>
+                            <p>Data testimoni customer</p>
+                        </div>
+                        <button type="button" class="action-btn danger" onclick="removeTestimonial(${testimonialCount})" style="margin-left: auto;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Nama Customer</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="testimonial${testimonialCount}Name" placeholder="Nama customer">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Rating Bintang</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-star input-icon"></i>
+                                <select id="testimonial${testimonialCount}Rating">
+                                    <option value="5">⭐⭐⭐⭐⭐ (5 Bintang)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4 Bintang)</option>
+                                    <option value="3">⭐⭐⭐ (3 Bintang)</option>
+                                    <option value="2">⭐⭐ (2 Bintang)</option>
+                                    <option value="1">⭐ (1 Bintang)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Foto Profil Customer</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-image input-icon"></i>
+                                <input type="url" id="testimonial${testimonialCount}Avatar" placeholder="https://example.com/customer-avatar.jpg">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Foto/Video Review</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-camera input-icon"></i>
+                                <input type="url" id="testimonial${testimonialCount}Media" placeholder="https://example.com/review-photo.jpg">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label class="form-label">Teks Testimoni</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-quote-left input-icon" style="top: 1.5rem;"></i>
+                                <textarea id="testimonial${testimonialCount}Text" placeholder="Bagus banget! Bahan lembut, nyaman dipakai, jahitan rapi. Sangat recommended!"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(testimonialCard);
+                showToast('Testimoni berhasil ditambahkan');
+            }
+        }
+
+        function removeTestimonial(id) {
+            const element = document.getElementById(`testimonial-${id}`);
+            if (element) {
+                element.remove();
+                showToast('Testimoni berhasil dihapus');
+            }
+        }
+
+        // Form validation
+        function validateForm() {
+            const required = [
+                'productName', 'productCategory', 'originalPrice', 'productDescription',
+                'headingFont', 'bodyFont', 'colorScheme', 'layoutStyle',
+                'mainImage', 'orderOnlineEmbed', 'storeName', 'whatsappNumber',
+                'targetAudience', 'uniqueSellingPoint'
+            ];
+            
+            for (let field of required) {
+                const element = document.getElementById(field);
+                if (!element || !element.value.trim()) {
+                    if (element) element.focus();
+                    showToast(`Mohon lengkapi field: ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`, 'error');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Collect form data
+        function collectFormData() {
+            const data = {
+                productName: document.getElementById('productName')?.value || '',
+                productCategory: document.getElementById('productCategory')?.value || '',
+                originalPrice: document.getElementById('originalPrice')?.value || '0',
+                discountPrice: document.getElementById('discountPrice')?.value || '',
+                productDescription: document.getElementById('productDescription')?.value || '',
+                headingFont: document.getElementById('headingFont')?.value || 'Inter',
+                bodyFont: document.getElementById('bodyFont')?.value || 'Inter',
+                colorScheme: document.getElementById('colorScheme')?.value || 'royal-blue',
+                layoutStyle: document.getElementById('layoutStyle')?.value || 'modern-minimalist',
+                mainImage: document.getElementById('mainImage')?.value || '',
+                videoDemo: document.getElementById('videoDemo')?.value || '',
+                productGallery: document.getElementById('productGallery')?.value || '',
+                orderOnlineEmbed: document.getElementById('orderOnlineEmbed')?.value || '',
+                storeName: document.getElementById('storeName')?.value || '',
+                whatsappNumber: document.getElementById('whatsappNumber')?.value || '',
+                targetAudience: document.getElementById('targetAudience')?.value || '',
+                uniqueSellingPoint: document.getElementById('uniqueSellingPoint')?.value || '',
+                additionalNotes: document.getElementById('additionalNotes')?.value || ''
+            };
+
+            // Custom colors if selected
+            if (data.colorScheme === 'custom') {
+                data.customColors = {
+                    primary: document.getElementById('primaryColor')?.value || '#1a237e',
+                    secondary: document.getElementById('secondaryColor')?.value || '#3f51b5',
+                    accent: document.getElementById('accentColor')?.value || '#ffc107'
+                };
+            }
+
+            // Testimonials
+            const testimonialToggle = document.getElementById('testimonialToggle');
+            if (testimonialToggle && testimonialToggle.classList.contains('active')) {
+                data.testimonials = [];
+                for (let i = 1; i <= testimonialCount; i++) {
+                    const nameEl = document.getElementById(`testimonial${i}Name`);
+                    const textEl = document.getElementById(`testimonial${i}Text`);
+                    if (nameEl && textEl && nameEl.value && textEl.value) {
+                        data.testimonials.push({
+                            name: nameEl.value,
+                            rating: document.getElementById(`testimonial${i}Rating`)?.value || '5',
+                            avatar: document.getElementById(`testimonial${i}Avatar`)?.value || '',
+                            media: document.getElementById(`testimonial${i}Media`)?.value || '',
+                            text: textEl.value
+                        });
+                    }
+                }
+            }
+
+            // Social proof
+            const socialProofToggle = document.getElementById('socialProofToggle');
+            if (socialProofToggle && socialProofToggle.classList.contains('active')) {
+                data.socialProof = {
+                    interval: document.getElementById('popupInterval')?.value || '8',
+                    duration: document.getElementById('popupDuration')?.value || '5',
+                    names: document.getElementById('customerNames')?.value || 'Sari, Dewi, Maya',
+                    cities: document.getElementById('customerCities')?.value || 'Jakarta, Surabaya, Bandung',
+                    avatar: document.getElementById('customerAvatar')?.value || ''
+                };
+            }
+
+            return data;
+        }
+
+        // Generate HTML landing page
+        function generateHTML() {
+            if (!validateForm()) return;
+            
+            showLoading();
+            const data = collectFormData();
+            
+            setTimeout(() => {
+                const htmlCode = generateHTMLCode(data);
+                const htmlCodeElement = document.getElementById('htmlCode');
+                if (htmlCodeElement) {
+                    htmlCodeElement.textContent = htmlCode;
+                }
+                switchTab('html');
+                showResult();
+                hideLoading();
+                showToast('HTML landing page berhasil dihasilkan!', 'success');
+            }, 3000);
+        }
+
+        // Generate AI prompt
+        function generatePrompt() {
+            if (!validateForm()) return;
+            
+            showLoading();
+            const data = collectFormData();
+            
+            setTimeout(() => {
+                const promptText = generatePromptText(data);
+                const promptTextElement = document.getElementById('promptText');
+                if (promptTextElement) {
+                    promptTextElement.textContent = promptText;
+                }
+                switchTab('prompt');
+                showResult();
+                hideLoading();
+                showToast('AI prompt berhasil dihasilkan!', 'success');
+            }, 2500);
+        }
+
+        // Generate HTML code function
+        function generateHTMLCode(data) {
+            const colorSchemes = {
+                'luxury-black': { primary: '#000000', secondary: '#1a1a1a', accent: '#d4af37', light: '#f5f5f5' },
+                'royal-blue': { primary: '#1a237e', secondary: '#303f9f', accent: '#ffc107', light: '#e8eaf6' },
+                'emerald-green': { primary: '#00695c', secondary: '#00897b', accent: '#ff9800', light: '#e0f2f1' },
+                'wine-red': { primary: '#880e4f', secondary: '#c2185b', accent: '#ffc107', light: '#fce4ec' },
+                'sunset-orange': { primary: '#e65100', secondary: '#ff9800', accent: '#ffd54f', light: '#fff3e0' },
+                'purple-royal': { primary: '#4a148c', secondary: '#7b1fa2', accent: '#ffb74d', light: '#f3e5f5' },
+                'gold-luxury': { primary: '#ff8f00', secondary: '#ffa000', accent: '#37474f', light: '#fffde7' },
+                'silver-premium': { primary: '#455a64', secondary: '#607d8b', accent: '#ffc107', light: '#eceff1' }
+            };
+
+            const colors = data.colorScheme === 'custom' ? data.customColors : colorSchemes[data.colorScheme] || colorSchemes['royal-blue'];
+            
+            return `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${data.productName} - ${data.storeName}</title>
+    <link href="https://fonts.googleapis.com/css2?family=${data.headingFont.replace(' ', '+')}:wght@300;400;500;600;700;800;900&family=${data.bodyFont.replace(' ', '+')}:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: ${colors.primary};
+            --secondary: ${colors.secondary};
+            --accent: ${colors.accent};
+            --light: ${colors.light};
+            --white: #ffffff;
+            --heading-font: '${data.headingFont}', serif;
+            --body-font: '${data.bodyFont}', sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: var(--primary);
+            background: var(--white);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .product-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .product-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .order-section {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+        
+        .order-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>${data.productName}</h1>
+            <p>${data.uniqueSellingPoint}</p>
+            <a href="#order" class="cta-button">
+                <i class="fas fa-shopping-cart"></i> Pesan Sekarang
+            </a>
+        </div>
+    </section>
+    
+    <section class="product-section">
+        <div class="container">
+            <div class="product-grid">
+                <div class="product-image">
+                    <img src="${data.mainImage}" alt="${data.productName}">
+                </div>
+                <div class="product-info">
+                    <h2>${data.productName}</h2>
+                    <div class="price">
+                        ${data.discountPrice ? `<span class="original-price">Rp ${parseInt(data.originalPrice).toLocaleString('id-ID')}</span>` : ''}
+                        Rp ${parseInt(data.discountPrice || data.originalPrice).toLocaleString('id-ID')}
+                    </div>
+                    <p>${data.productDescription}</p>
+                    <a href="#order" class="cta-button">
+                        <i class="fas fa-whatsapp"></i> Order Via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="order-section" id="order">
+        <div class="order-container">
+            <h2>Pesan ${data.productName} Sekarang</h2>
+            <p>Gunakan form di bawah untuk memesan langsung</p>
+            
+            ${data.orderOnlineEmbed}
+            
+            <div style="margin-top: 2rem;">
+                <a href="https://wa.me/${data.whatsappNumber}?text=Halo%20${data.storeName},%20saya%20tertarik%20dengan%20${data.productName}" 
+                   target="_blank" class="cta-button">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>`;
+        }
+
+        // Generate AI prompt text function
+        function generatePromptText(data) {
+            return `Buatkan landing page conversion-optimized yang sangat menarik untuk "${data.productName}" dengan spesifikasi berikut:
+
+🎯 INFORMASI PRODUK:
+- Nama Produk: ${data.productName}
+- Kategori: ${data.productCategory}
+- Harga Asli: Rp ${parseInt(data.originalPrice).toLocaleString('id-ID')}
+${data.discountPrice ? `- Harga Diskon: Rp ${parseInt(data.discountPrice).toLocaleString('id-ID')}` : ''}
+- Deskripsi: ${data.productDescription}
+- Target Audience: ${data.targetAudience}
+- USP: ${data.uniqueSellingPoint}
+- Toko: ${data.storeName}
+- WhatsApp: ${data.whatsappNumber}
+
+🎨 DESAIN:
+- Font Heading: ${data.headingFont}
+- Font Body: ${data.bodyFont}
+- Color Scheme: ${data.colorScheme}
+- Layout Style: ${data.layoutStyle}
+
+📸 VISUAL:
+- Gambar Utama: ${data.mainImage}
+${data.videoDemo ? `- Video Demo: ${data.videoDemo}` : ''}
+
+🛒 ORDERONLINE INTEGRATION:
+${data.orderOnlineEmbed}
+
+${data.additionalNotes ? `\n📝 CATATAN TAMBAHAN:\n${data.additionalNotes}` : ''}
+
+Buatkan landing page HTML lengkap yang responsive, conversion-optimized, dan siap deploy!`;
+        }
+
+        // Result tab switching
+        function switchTab(tab) {
+            const tabs = document.querySelectorAll('.result-tab');
+            const contents = document.querySelectorAll('.result-content');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            const activeTab = document.querySelector(`[onclick="switchTab('${tab}')"]`);
+            const activeContent = document.getElementById(`${tab}Content`);
+            
+            if (activeTab) activeTab.classList.add('active');
+            if (activeContent) activeContent.classList.add('active');
+            
+            currentTab = tab;
+        }
+
+        // Copy content function
+        function copyContent(type) {
+            const content = type === 'html' 
+                ? document.getElementById('htmlCode')?.textContent || ''
+                : document.getElementById('promptText')?.textContent || '';
+            
+            if (content) {
+                navigator.clipboard.writeText(content).then(() => {
+                    const button = document.querySelector(`[onclick="copyContent('${type}')"]`);
+                    if (button) {
+                        const originalText = button.innerHTML;
+                        button.classList.add('copied');
+                        button.innerHTML = '<i class="fas fa-check"></i> <span>Copied!</span>';
+                        
+                        showToast(`${type === 'html' ? 'HTML' : 'Prompt'} berhasil dicopy!`, 'success');
+                        
+                        setTimeout(() => {
+                            button.classList.remove('copied');
+                            button.innerHTML = originalText;
+                        }, 3000);
+                    }
+                }).catch(() => {
+                    showToast('Gagal copy ke clipboard', 'error');
+                });
+            }
+        }
+
+        // Utility functions
+        function showLoading() {
+            const loadingEl = document.getElementById('loadingState');
+            if (loadingEl) loadingEl.classList.add('active');
+        }
+
+        function hideLoading() {
+            const loadingEl = document.getElementById('loadingState');
+            if (loadingEl) loadingEl.classList.remove('active');
+        }
+
+        function showResult() {
+            const resultEl = document.getElementById('resultSection');
+            if (resultEl) {
+                resultEl.classList.add('active');
+                resultEl.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            if (toast && toastMessage) {
+                toast.className = `toast ${type}`;
+                toastMessage.textContent = message;
+                toast.classList.add('show');
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        setTimeout(() => {
+            document.querySelectorAll('.form-card, .feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(card);
+            });
+        }, 100);
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (header) {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            }
+        }, false);
+    </script>
+    </script>
+</body>
+</html>
