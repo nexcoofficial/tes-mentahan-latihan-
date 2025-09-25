@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Root Variables - Nexco Brand Colors */
+        /* Root Variables - Nexco Brand Colors (Synced with OrderOnline.id Logo) */
         :root {
             --nexco-primary: #1a237e;
             --nexco-secondary: #303f9f;
@@ -758,6 +758,102 @@
             color: var(--nexco-secondary);
         }
 
+        /* Testimonial Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1002;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            background: var(--white);
+            max-width: 600px;
+            width: 90%;
+            padding: 2rem;
+            border-radius: 16px;
+            position: relative;
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-600);
+        }
+
+        .lightbox-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .lightbox-text {
+            color: var(--gray-800);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Social Proof Popup */
+        .social-proof-popup {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(26, 35, 126, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 300px;
+            z-index: 1001;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .social-proof-popup.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .social-proof-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .social-proof-text {
+            font-size: 0.9rem;
+            color: var(--gray-800);
+        }
+
+        .social-proof-text strong {
+            color: var(--nexco-primary);
+        }
+
         /* Result Section */
         .result-section {
             display: none;
@@ -990,6 +1086,14 @@
                 width: 100%;
                 max-width: 300px;
             }
+            
+            .social-proof-popup {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+                max-width: none;
+                width: calc(100% - 2rem);
+            }
         }
 
         /* Smooth Scroll */
@@ -1189,6 +1293,15 @@
                                     <option value="property">Property & Real Estate</option>
                                     <option value="investasi">Investasi & Trading</option>
                                     <option value="keuangan">Layanan Keuangan</option>
+                                    <option value="kamera">Kamera & Fotografi</option>
+                                    <option value="gaming">Gaming & Aksesoris</option>
+                                    <option value="musik">Musik & Alat Musik</option>
+                                    <option value="hobi">Hobi & Koleksi</option>
+                                    <option value="hewan">Hewan Peliharaan</option>
+                                    <option value="pertanian">Pertanian & Agrikultur</option>
+                                    <option value="kerajinan">Kerajinan Tangan</option>
+                                    <option value="event">Event & Hiburan</option>
+                                    <option value="wedding">Pernikahan & Acara</option>
                                 </select>
                             </div>
                         </div>
@@ -1250,6 +1363,7 @@
                                     <option value="DM Sans">DM Sans - Modern Geometric</option>
                                     <option value="Space Grotesk">Space Grotesk - Tech Sans Serif</option>
                                     <option value="Manrope">Manrope - Contemporary Sans Serif</option>
+                                    <option value="Source Sans Pro">Source Sans Pro - Professional Serif</option>
                                 </select>
                             </div>
                         </div>
@@ -1272,6 +1386,7 @@
                                     <option value="Montserrat">Montserrat - Strong Body Text</option>
                                     <option value="DM Sans">DM Sans - Geometric Body</option>
                                     <option value="Manrope">Manrope - Contemporary Body</option>
+                                    <option value="Raleway">Raleway - Elegant Reading</option>
                                 </select>
                             </div>
                         </div>
@@ -1312,6 +1427,7 @@
                                     <option value="midnight-navy">🌃 Midnight Navy - Navy Midnight</option>
                                     <option value="champagne-gold">🥂 Champagne Gold - Emas Sampanye</option>
                                     <option value="teal-modern">💎 Teal Modern - Teal Kontemporer</option>
+                                    <option value="pastel-soft">🌸 Pastel Soft - Pastel Lembut</option>
                                     <option value="custom">🎨 Custom Colors - Warna Kustom</option>
                                 </select>
                             </div>
@@ -1455,7 +1571,7 @@
                         <div class="section-number">6</div>
                         <div class="form-header-info">
                             <h3>Sistem Testimoni</h3>
-                            <p>Tambahkan testimoni customer untuk meningkatkan kepercayaan</p>
+                            <p>Tambahkan testimoni customer dengan lightbox untuk meningkatkan kepercayaan</p>
                         </div>
                     </div>
                     
@@ -1484,7 +1600,7 @@
                         <div class="section-number">7</div>
                         <div class="form-header-info">
                             <h3>Social Proof System</h3>
-                            <p>Popup notifikasi customer untuk meningkatkan konversi</p>
+                            <p>Popup notifikasi customer dalam bahasa Indonesia untuk meningkatkan konversi</p>
                         </div>
                     </div>
                     
@@ -1498,7 +1614,7 @@
                     <div class="expandable-section" id="socialProofSection">
                         <div class="form-grid">
                             <div class="form-group">
-                                <label class="form-label">Interval Popup (detik)</label>
+                                <label class="form-label">Interval Popup (detik) <span class="required">*</span></label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-clock input-icon"></i>
                                     <input type="number" id="popupInterval" value="8" min="3" max="30">
@@ -1506,7 +1622,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label class="form-label">Durasi Tampil (detik)</label>
+                                <label class="form-label">Durasi Tampil (detik) <span class="required">*</span></label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-stopwatch input-icon"></i>
                                     <input type="number" id="popupDuration" value="5" min="2" max="15">
@@ -1514,7 +1630,7 @@
                             </div>
                             
                             <div class="form-group full-width">
-                                <label class="form-label">Nama Customer Indonesia (pisah dengan koma)</label>
+                                <label class="form-label">Nama Customer Indonesia (pisah dengan koma) <span class="required">*</span></label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-users input-icon"></i>
                                     <input type="text" id="customerNames" value="Sari, Dewi, Maya, Putri, Rina, Indira, Kartika, Lestari, Permata, Vina, Dina, Anisa, Fitri, Novi, Ratna" placeholder="Nama1, Nama2, Nama3...">
@@ -1522,7 +1638,7 @@
                             </div>
                             
                             <div class="form-group full-width">
-                                <label class="form-label">Kota di Indonesia (pisah dengan koma)</label>
+                                <label class="form-label">Kota di Indonesia (pisah dengan koma) <span class="required">*</span></label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-map-marker-alt input-icon"></i>
                                     <input type="text" id="customerCities" value="Jakarta, Surabaya, Bandung, Medan, Bekasi, Tangerang, Depok, Semarang, Palembang, Makassar, Yogyakarta, Malang, Bogor, Batam, Denpasar" placeholder="Kota1, Kota2, Kota3...">
@@ -1534,6 +1650,14 @@
                                 <div class="input-wrapper">
                                     <i class="fas fa-image input-icon"></i>
                                     <input type="url" id="customerAvatar" placeholder="https://example.com/avatar-customer.jpg">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label class="form-label">Template Pesan Popup <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
+                                    <textarea id="popupMessageTemplate" placeholder="{name} dari {city} baru saja membeli {product}">{name} dari {city} baru saja membeli {product}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -1681,6 +1805,21 @@
         </div>
     </section>
 
+    <!-- Testimonial Lightbox -->
+    <div class="lightbox" id="testimonialLightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightboxImage" class="lightbox-image" src="" alt="Testimonial Image">
+            <p id="lightboxText" class="lightbox-text"></p>
+        </div>
+    </div>
+
+    <!-- Social Proof Popup -->
+    <div class="social-proof-popup" id="socialProofPopup">
+        <img id="popupAvatar" class="social-proof-avatar" src="" alt="Customer Avatar">
+        <p id="popupText" class="social-proof-text"></p>
+    </div>
+
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i class="fas fa-check-circle"></i>
@@ -1691,11 +1830,15 @@
         // Global variables
         let testimonialCount = 0;
         let currentTab = 'html';
+        let socialProofInterval;
 
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
             initializeColorPicker();
             setupEventListeners();
+            addTestimonial(); // Add initial testimonial
+            addTestimonial(); // Add second testimonial
+            addTestimonial(); // Add third testimonial
             
             // Make functions globally accessible
             window.scrollToGenerator = scrollToGenerator;
@@ -1707,6 +1850,8 @@
             window.generatePrompt = generatePrompt;
             window.switchTab = switchTab;
             window.copyContent = copyContent;
+            window.showLightbox = showLightbox;
+            window.closeLightbox = closeLightbox;
         });
 
         // Navigation functions
@@ -1744,7 +1889,7 @@
                     '#c5cae9', '#ffc107', '#ff9800', '#ff5722',
                     '#e91e63', '#9c27b0', '#673ab7', '#2196f3',
                     '#00bcd4', '#009688', '#4caf50', '#8bc34a',
-                    '#cddc39', '#ffeb3b', '#ff9800', '#795548'
+                    '#cddc39', '#ffeb3b', '#795548', '#607d8b'
                 ];
                 
                 predefinedColors.forEach(color => {
@@ -1761,6 +1906,7 @@
         function selectColor(element, color) {
             document.querySelectorAll('.color-option').forEach(el => el.classList.remove('selected'));
             element.classList.add('selected');
+            document.getElementById('primaryColor').value = color;
         }
 
         // Toggle functions
@@ -1785,129 +1931,4 @@
         function toggleSocialProof() {
             const toggle = document.getElementById('socialProofToggle');
             const wrapper = document.getElementById('socialProofWrapper');
-            const section = document.getElementById('socialProofSection');
-            
-            if (toggle && wrapper && section) {
-                toggle.classList.toggle('active');
-                wrapper.classList.toggle('active');
-                section.classList.toggle('active');
-            }
-        }
-
-        // Testimonial management
-        function addTestimonial() {
-            testimonialCount++;
-            const container = document.getElementById('testimonialFields');
-            
-            if (container) {
-                const testimonialCard = document.createElement('div');
-                testimonialCard.className = 'form-card';
-                testimonialCard.id = `testimonial-${testimonialCount}`;
-                testimonialCard.style.marginBottom = '1.5rem';
-                
-                testimonialCard.innerHTML = `
-                    <div class="form-header">
-                        <div style="width: 40px; height: 40px; background: var(--nexco-accent); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 600;">${testimonialCount}</div>
-                        <div class="form-header-info">
-                            <h3>Testimoni ${testimonialCount}</h3>
-                            <p>Data testimoni customer</p>
-                        </div>
-                        <button type="button" class="action-btn danger" onclick="removeTestimonial(${testimonialCount})" style="margin-left: auto;">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label">Nama Customer</label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-user input-icon"></i>
-                                <input type="text" id="testimonial${testimonialCount}Name" placeholder="Nama customer">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Rating Bintang</label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-star input-icon"></i>
-                                <select id="testimonial${testimonialCount}Rating">
-                                    <option value="5">⭐⭐⭐⭐⭐ (5 Bintang)</option>
-                                    <option value="4">⭐⭐⭐⭐ (4 Bintang)</option>
-                                    <option value="3">⭐⭐⭐ (3 Bintang)</option>
-                                    <option value="2">⭐⭐ (2 Bintang)</option>
-                                    <option value="1">⭐ (1 Bintang)</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Foto Profil Customer</label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-image input-icon"></i>
-                                <input type="url" id="testimonial${testimonialCount}Avatar" placeholder="https://example.com/customer-avatar.jpg">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Foto/Video Review</label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-camera input-icon"></i>
-                                <input type="url" id="testimonial${testimonialCount}Media" placeholder="https://example.com/review-photo.jpg">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label class="form-label">Teks Testimoni</label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-quote-left input-icon" style="top: 1.5rem;"></i>
-                                <textarea id="testimonial${testimonialCount}Text" placeholder="Bagus banget! Bahan lembut, nyaman dipakai, jahitan rapi. Sangat recommended!"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                container.appendChild(testimonialCard);
-                showToast('Testimoni berhasil ditambahkan');
-            }
-        }
-
-        function removeTestimonial(id) {
-            const element = document.getElementById(`testimonial-${id}`);
-            if (element) {
-                element.remove();
-                showToast('Testimoni berhasil dihapus');
-            }
-        }
-
-        // Form validation
-        function validateForm() {
-            const required = [
-                'productName', 'productCategory', 'originalPrice', 'productDescription',
-                'headingFont', 'bodyFont', 'colorScheme', 'layoutStyle',
-                'mainImage', 'orderOnlineEmbed', 'storeName', 'whatsappNumber',
-                'targetAudience', 'uniqueSellingPoint'
-            ];
-            
-            for (let field of required) {
-                const element = document.getElementById(field);
-                if (!element || !element.value.trim()) {
-                    if (element) element.focus();
-                    showToast(`Mohon lengkapi field: ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`, 'error');
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        // Collect form data
-        function collectFormData() {
-            const data = {
-                productName: document.getElementById('productName')?.value || '',
-                productCategory: document.getElementById('productCategory')?.value || '',
-                originalPrice: document.getElementById('originalPrice')?.value || '0',
-                discountPrice: document.getElementById('discountPrice')?.value || '',
-                productDescription: document.getElementById('productDescription')?.value || '',
-                headingFont: document.getElementById('headingFont')?.value || 'Inter',
-                bodyFont: document.getElementById('bodyFont')?.value || 'Inter',
-                colorScheme: document.getElementById('colorScheme')?.value || 'royal-blue',
-                layoutStyle: document
+            const section = document.getElementBy
