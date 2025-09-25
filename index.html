@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexco - Advanced Landing Page Generator</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Lato:wght@100;300;400;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         /* Root Variables - Nexco Brand Colors (Synced with OrderOnline.id Logo) */
         :root {
@@ -35,7 +35,7 @@
             --gray-700: #616161;
             --gray-800: #424242;
             --gray-900: #212121;
-            
+
             /* Gradients */
             --gradient-primary: linear-gradient(135deg, #1a237e 0%, #303f9f 50%, #3f51b5 100%);
             --gradient-accent: linear-gradient(135deg, #3f51b5 0%, #7986cb 100%);
@@ -378,7 +378,129 @@
             line-height: 1.6;
         }
 
-        /* Main Form Section */
+        /* Testimonial Section (Shopee-like) */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--gray-50);
+        }
+
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-card {
+            flex: 0 0 calc(33.33% - 1rem);
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            color: var(--nexco-primary);
+            margin: 0;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .testimonial-rating i {
+            color: var(--nexco-gold);
+            font-size: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            color: var(--gray-800);
+            line-height: 1.5;
+        }
+
+        .testimonial-text strong {
+            color: var(--nexco-primary);
+        }
+
+        .testimonial-media {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-media img,
+        .testimonial-media video {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .testimonial-media img:hover,
+        .testimonial-media video:hover {
+            transform: scale(1.05);
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-btn {
+            background: var(--nexco-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: var(--nexco-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 calc(100% - 1rem);
+            }
+        }
+
+        /* Form Section */
         .form-section {
             padding: 5rem 0;
             background: var(--gray-50);
@@ -795,10 +917,10 @@
             color: var(--gray-600);
         }
 
-        .lightbox-image {
+        .lightbox-media {
             width: 100%;
-            max-height: 300px;
-            object-fit: cover;
+            max-height: 400px;
+            object-fit: contain;
             border-radius: 12px;
             margin-bottom: 1rem;
         }
@@ -1024,20 +1146,20 @@
             .nav-actions {
                 gap: 0.5rem;
             }
-            
+
             .nav-btn {
                 padding: 0.5rem 1rem;
                 font-size: 0.85rem;
             }
-            
+
             .hero h1 {
                 font-size: 3.5rem;
             }
-            
+
             .features-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
-            
+
             .form-grid {
                 grid-template-columns: 1fr;
             }
@@ -1047,46 +1169,46 @@
             .nav-container {
                 padding: 0 1rem;
             }
-            
+
             .brand-name {
                 font-size: 1.25rem;
             }
-            
+
             .hero {
                 padding-top: 120px;
             }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .form-container {
                 padding: 0 1rem;
             }
-            
+
             .form-card {
                 padding: 1.5rem;
             }
-            
+
             .generate-actions {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .generate-button {
                 width: 100%;
                 max-width: 300px;
             }
-            
+
             .social-proof-popup {
                 left: 1rem;
                 right: 1rem;
@@ -1128,7 +1250,7 @@
                 <img src="https://cdn.orderonline.id/uploads/images_7847141758725198821.png" alt="Nexco Logo" class="logo">
                 <span class="brand-name">Nexco</span>
             </div>
-            
+
             <div class="nav-actions">
                 <a href="https://enzostvs-deepsite.hf.space/projects/new" target="_blank" class="nav-btn secondary">
                     <i class="fas fa-external-link-alt"></i>
@@ -1152,11 +1274,11 @@
             <div class="shape triangle shape-5"></div>
             <div class="shape square shape-6"></div>
         </div>
-        
+
         <div class="hero-content">
             <h1>Advanced Landing Page Generator</h1>
-            <p>Buat landing page profesional dan video promosi dengan AI teknologi terdepan. Solusi complete untuk konversi maksimal.</p>
-            
+            <p>Buat landing page profesional dan video promosi dengan AI teknologi terdepan. Solusi lengkap untuk konversi maksimal.</p>
+
             <div class="hero-actions">
                 <button class="cta-button" onclick="scrollToGenerator()">
                     <i class="fas fa-magic"></i>
@@ -1177,42 +1299,64 @@
                 <h2 class="section-title">Fitur Unggulan Nexco</h2>
                 <p class="section-subtitle">Platform all-in-one untuk kebutuhan digital marketing dan landing page profesional</p>
             </div>
-            
+
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-brain"></i></div>
                     <h3>AI-Powered Generator</h3>
                     <p>Teknologi AI canggih untuk menghasilkan landing page dan prompt berkualitas tinggi</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-code"></i></div>
                     <h3>HTML Ready</h3>
                     <p>Generate kode HTML siap pakai atau prompt untuk AI builder lainnya</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-video"></i></div>
                     <h3>Video Generator</h3>
                     <p>Integrasi dengan Tonskay AI untuk membuat video promosi yang menarik</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-palette"></i></div>
                     <h3>Custom Design</h3>
                     <p>Pilihan warna otomatis dan font premium untuk tampilan yang memukau</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-comments"></i></div>
                     <h3>Smart Testimonial</h3>
                     <p>Sistem testimoni dengan lightbox dan carousel seperti marketplace populer</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Social Proof</h3>
                     <p>Popup notifikasi customer real-time untuk meningkatkan konversi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section (Shopee-like) -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Testimoni Pelanggan</h2>
+                <p class="section-subtitle">Lihat apa kata pelanggan tentang produk kami</p>
+            </div>
+
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialTrack"></div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="prevTestimonial()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" onclick="nextTestimonial()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1236,7 +1380,7 @@
                             <p>Detail lengkap tentang produk atau layanan Anda</p>
                         </div>
                     </div>
-                    
+
                     <div class="form-grid">
                         <div class="form-group">
                             <label class="form-label">Nama Produk <span class="required">*</span></label>
@@ -1245,7 +1389,7 @@
                                 <input type="text" id="productName" placeholder="Contoh: Hijab Premium Silk">
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label">Kategori Produk <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1305,7 +1449,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label">Harga Asli <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1313,7 +1457,7 @@
                                 <input type="number" id="originalPrice" placeholder="299000">
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label">Harga Diskon</label>
                             <div class="input-wrapper">
@@ -1321,7 +1465,7 @@
                                 <input type="number" id="discountPrice" placeholder="199000">
                             </div>
                         </div>
-                        
+
                         <div class="form-group full-width">
                             <label class="form-label">Deskripsi Produk <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1343,7 +1487,7 @@
                             <p>Pilih kombinasi font yang sesuai dengan brand Anda</p>
                         </div>
                     </div>
-                    
+
                     <div class="form-grid">
                         <div class="form-group">
                             <label class="form-label">Font Heading <span class="required">*</span></label>
@@ -1367,7 +1511,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label">Font Body <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1404,7 +1548,7 @@
                             <p>Tentukan skema warna dan gaya desain landing page</p>
                         </div>
                     </div>
-                    
+
                     <div class="form-grid">
                         <div class="form-group">
                             <label class="form-label">Skema Warna <span class="required">*</span></label>
@@ -1432,7 +1576,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label">Gaya Layout <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1458,13 +1602,10 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Custom Color Picker -->
+
                     <div id="customColorSection" class="color-picker-container" style="display: none;">
                         <h4 style="margin-bottom: 1rem; color: var(--nexco-primary);">Custom Color Palette</h4>
-                        <div class="color-grid" id="colorGrid">
-                            <!-- Color options will be generated here -->
-                        </div>
+                        <div class="color-grid" id="colorGrid"></div>
                         <div class="form-grid" style="margin-top: 1rem;">
                             <div class="form-group">
                                 <label class="form-label">Primary Color</label>
@@ -1493,7 +1634,7 @@
                             <p>Upload atau masukkan link gambar dan video produk</p>
                         </div>
                     </div>
-                    
+
                     <div class="form-grid">
                         <div class="form-group full-width">
                             <label class="form-label">Gambar Utama Produk <span class="required">*</span></label>
@@ -1502,7 +1643,7 @@
                                 <input type="url" id="mainImage" placeholder="https://example.com/product-main-image.jpg">
                             </div>
                         </div>
-                        
+
                         <div class="form-group full-width">
                             <label class="form-label">Video Demo Produk</label>
                             <div class="input-wrapper">
@@ -1510,7 +1651,7 @@
                                 <input type="url" id="videoDemo" placeholder="https://youtube.com/watch?v=... atau https://vimeo.com/...">
                             </div>
                         </div>
-                        
+
                         <div class="form-group full-width">
                             <label class="form-label">Galeri Produk (URLs dipisah dengan enter)</label>
                             <div class="input-wrapper">
@@ -1532,7 +1673,7 @@
                             <p>Integrasi dengan sistem pemesanan OrderOnline</p>
                         </div>
                     </div>
-                    
+
                     <div class="form-grid">
                         <div class="form-group full-width">
                             <label class="form-label">Embed Code OrderOnline <span class="required">*</span></label>
@@ -1544,7 +1685,7 @@
                                 <i class="fas fa-info-circle"></i> Copy embed code dari dashboard OrderOnline.id Anda
                             </small>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label">Nama Toko/Brand <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1552,7 +1693,7 @@
                                 <input type="text" id="storeName" placeholder="Toko Hijab Premium">
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label">Nomor WhatsApp <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -1574,16 +1715,177 @@
                             <p>Tambahkan testimoni customer dengan lightbox untuk meningkatkan kepercayaan</p>
                         </div>
                     </div>
-                    
+
                     <div class="toggle-wrapper" id="testimonialWrapper">
                         <label class="toggle-label">Aktifkan Testimoni Customer</label>
                         <div class="toggle-switch" id="testimonialToggle" onclick="toggleTestimonial()">
                             <div class="toggle-slider"></div>
                         </div>
                     </div>
-                    
+
                     <div class="expandable-section" id="testimonialSection">
-                        <div id="testimonialFields"></div>
+                        <div id="testimonialFields">
+                            <!-- Testimonial 1 -->
+                            <div class="testimonial-entry" id="testimonial-1">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label">Nama Customer <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-user input-icon"></i>
+                                            <input type="text" name="testimonialName-1" placeholder="Nama Customer">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Foto Profil Customer</label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-image input-icon"></i>
+                                            <input type="url" name="testimonialAvatar-1" placeholder="https://example.com/customer.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Rating (1-5) <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-star input-icon"></i>
+                                            <input type="number" name="testimonialRating-1" min="1" max="5" value="5">
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Media Testimoni (Foto/Video)</label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-images input-icon" style="top: 1.5rem;"></i>
+                                            <textarea name="testimonialMedia-1" placeholder="https://example.com/testimonial1.jpg&#10;https://example.com/testimonial1.mp4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Kata-kata Customer <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
+                                            <textarea name="testimonialText-1" placeholder="Bahan lembut, nyaman dipakai, jahitan rapi..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 2 -->
+                            <div class="testimonial-entry" id="testimonial-2">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label">Nama Customer <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-user input-icon"></i>
+                                            <input type="text" name="testimonialName-2" placeholder="Nama Customer">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Foto Profil Customer</label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-image input-icon"></i>
+                                            <input type="url" name="testimonialAvatar-2" placeholder="https://example.com/customer.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Rating (1-5) <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-star input-icon"></i>
+                                            <input type="number" name="testimonialRating-2" min="1" max="5" value="5">
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Media Testimoni (Foto/Video)</label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-images input-icon" style="top: 1.5rem;"></i>
+                                            <textarea name="testimonialMedia-2" placeholder="https://example.com/testimonial2.jpg&#10;https://example.com/testimonial2.mp4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Kata-kata Customer <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
+                                            <textarea name="testimonialText-2" placeholder="Bahan lembut, nyaman dipakai, jahitan rapi..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 3 -->
+                            <div class="testimonial-entry" id="testimonial-3">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label">Nama Customer <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-user input-icon"></i>
+                                            <input type="text" name="testimonialName-3" placeholder="Nama Customer">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Foto Profil Customer</label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-image input-icon"></i>
+                                            <input type="url" name="testimonialAvatar-3" placeholder="https://example.com/customer.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Rating (1-5) <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-star input-icon"></i>
+                                            <input type="number" name="testimonialRating-3" min="1" max="5" value="5">
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Media Testimoni (Foto/Video)</label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-images input-icon" style="top: 1.5rem;"></i>
+                                            <textarea name="testimonialMedia-3" placeholder="https://example.com/testimonial3.jpg&#10;https://example.com/testimonial3.mp4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Kata-kata Customer <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
+                                            <textarea name="testimonialText-3" placeholder="Bahan lembut, nyaman dipakai, jahitan rapi..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 4 -->
+                            <div class="testimonial-entry" id="testimonial-4">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label">Nama Customer <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-user input-icon"></i>
+                                            <input type="text" name="testimonialName-4" placeholder="Nama Customer">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Foto Profil Customer</label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-image input-icon"></i>
+                                            <input type="url" name="testimonialAvatar-4" placeholder="https://example.com/customer.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Rating (1-5) <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-star input-icon"></i>
+                                            <input type="number" name="testimonialRating-4" min="1" max="5" value="5">
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Media Testimoni (Foto/Video)</label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-images input-icon" style="top: 1.5rem;"></i>
+                                            <textarea name="testimonialMedia-4" placeholder="https://example.com/testimonial4.jpg&#10;https://example.com/testimonial4.mp4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Kata-kata Customer <span class="required">*</span></label>
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
+                                            <textarea name="testimonialText-4" placeholder="Bahan lembut, nyaman dipakai, jahitan rapi..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div style="text-align: center; margin-top: 1.5rem;">
                             <button type="button" class="action-btn" onclick="addTestimonial()">
                                 <i class="fas fa-plus"></i> Tambah Testimoni
@@ -1603,332 +1905,46 @@
                             <p>Popup notifikasi customer dalam bahasa Indonesia untuk meningkatkan konversi</p>
                         </div>
                     </div>
-                    
+
                     <div class="toggle-wrapper" id="socialProofWrapper">
                         <label class="toggle-label">Aktifkan Social Proof Popup</label>
                         <div class="toggle-switch" id="socialProofToggle" onclick="toggleSocialProof()">
                             <div class="toggle-slider"></div>
                         </div>
                     </div>
-                    
+
                     <div class="expandable-section" id="socialProofSection">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Interval Popup (detik) <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-clock input-icon"></i>
-                                    <input type="number" id="popupInterval" value="8" min="3" max="30">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">Durasi Tampil (detik) <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-stopwatch input-icon"></i>
-                                    <input type="number" id="popupDuration" value="5" min="2" max="15">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <label class="form-label">Nama Customer Indonesia (pisah dengan koma) <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-users input-icon"></i>
-                                    <input type="text" id="customerNames" value="Sari, Dewi, Maya, Putri, Rina, Indira, Kartika, Lestari, Permata, Vina, Dina, Anisa, Fitri, Novi, Ratna" placeholder="Nama1, Nama2, Nama3...">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <label class="form-label">Kota di Indonesia (pisah dengan koma) <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-map-marker-alt input-icon"></i>
-                                    <input type="text" id="customerCities" value="Jakarta, Surabaya, Bandung, Medan, Bekasi, Tangerang, Depok, Semarang, Palembang, Makassar, Yogyakarta, Malang, Bogor, Batam, Denpasar" placeholder="Kota1, Kota2, Kota3...">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <label class="form-label">Link Foto Avatar Customer</label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-image input-icon"></i>
-                                    <input type="url" id="customerAvatar" placeholder="https://example.com/avatar-customer.jpg">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <label class="form-label">Template Pesan Popup <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-comment input-icon" style="top: 1.5rem;"></i>
-                                    <textarea id="popupMessageTemplate" placeholder="{name} dari {city} baru saja membeli {product}">{name} dari {city} baru saja membeli {product}</textarea>
-                                </div>
+                        <div class="toggle-wrapper" id="customSocialProofWrapper">
+                            <label class="toggle-label">Gunakan Nama Customer Kustom</label>
+                            <div class="toggle-switch" id="customSocialProofToggle" onclick="toggleCustomSocialProof()">
+                                <div class="toggle-slider"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Section 8: Target & Marketing -->
-            <div class="form-section-wrapper">
-                <div class="form-card">
-                    <div class="form-header">
-                        <div class="section-number">8</div>
-                        <div class="form-header-info">
-                            <h3>Target & Marketing</h3>
-                            <p>Tentukan target audience dan strategi pemasaran</p>
-                        </div>
-                    </div>
-                    
-                    <div class="form-grid">
-                        <div class="form-group full-width">
-                            <label class="form-label">Target Audience <span class="required">*</span></label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-users input-icon"></i>
-                                <input type="text" id="targetAudience" placeholder="Contoh: Wanita muslimah usia 25-40 tahun yang aktif, modern, dan peduli fashion">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label class="form-label">Unique Selling Point <span class="required">*</span></label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-star input-icon"></i>
-                                <input type="text" id="uniqueSellingPoint" placeholder="Contoh: Bahan premium dengan teknologi cooling yang nyaman dipakai seharian">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label class="form-label">Catatan Tambahan & Request Khusus</label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-sticky-note input-icon" style="top: 1.5rem;"></i>
-                                <textarea id="additionalNotes" placeholder="Tambahkan informasi khusus, request fitur tertentu, atau detail lain yang ingin dimasukkan..."></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Video Generator Section -->
-            <div class="video-section">
-                <div class="video-header">
-                    <h3><i class="fas fa-video"></i> Generate Video Promosi</h3>
-                    <p>Buat video promosi yang menarik dengan Tonskay AI</p>
-                </div>
-                
-                <div class="login-info">
-                    <h4><i class="fas fa-key"></i> Butuh Akses Login?</h4>
-                    <p>Untuk menggunakan Tonskay AI, hubungi admin untuk mendapatkan akses login:</p>
-                    <a href="https://wa.me/6281225681788?text=Halo%20admin,%20saya%20butuh%20akses%20login%20untuk%20Tonskay%20AI.%20Mohon%20berikan%20detail%20loginnya." target="_blank" class="whatsapp-contact">
-                        <i class="fab fa-whatsapp"></i>
-                        +62 812-2568-1788
-                    </a>
-                </div>
-                
-                <div style="text-align: center;">
-                    <a href="https://tonskay.com/tonskay-ai/#pricing" target="_blank" class="action-btn" style="background: var(--gradient-gold); color: var(--nexco-primary); font-size: 1.1rem; padding: 1rem 2rem;">
-                        <i class="fas fa-video"></i>
-                        Generate Video di Tonskay AI
-                    </a>
-                </div>
-            </div>
-
-            <!-- Generate Section -->
-            <div class="generate-section">
-                <div class="generate-actions">
-                    <button type="button" class="generate-button" onclick="generateHTML()">
-                        <i class="fas fa-code"></i>
-                        Generate HTML Landing Page
-                    </button>
-                    
-                    <button type="button" class="generate-button secondary" onclick="generatePrompt()">
-                        <i class="fas fa-magic"></i>
-                        Generate AI Prompt
-                    </button>
-                </div>
-                
-                <p style="margin-top: 1rem; color: var(--gray-600); font-size: 0.9rem;">
-                    Pilih HTML untuk mendapatkan kode siap pakai, atau AI Prompt untuk digunakan di platform AI builder lainnya
-                </p>
-            </div>
-
-            <!-- Loading State -->
-            <div class="loading" id="loadingState">
-                <div class="spinner"></div>
-                <p style="margin-top: 1rem; color: var(--gray-600);">Sedang menghasilkan konten premium...</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Result Section -->
-    <section class="result-section" id="resultSection">
-        <div class="container">
-            <div class="result-header">
-                <i class="fas fa-check-circle success-icon"></i>
-                <h2>Berhasil Dihasilkan!</h2>
-                <p style="color: var(--gray-600);">Konten premium Anda telah siap digunakan</p>
-            </div>
-            
-            <div class="result-tabs">
-                <button class="result-tab active" onclick="switchTab('html')">HTML Landing Page</button>
-                <button class="result-tab" onclick="switchTab('prompt')">AI Prompt</button>
-            </div>
-            
-            <div class="result-content active" id="htmlContent">
-                <div class="code-output">
-                    <button class="copy-button" onclick="copyContent('html')">
-                        <i class="far fa-copy"></i>
-                        <span>Copy HTML</span>
-                    </button>
-                    <pre id="htmlCode"></pre>
-                </div>
-                <div style="text-align: center; margin-top: 1rem;">
-                    <p style="color: var(--gray-600); margin-bottom: 1rem;">Kode HTML siap untuk di-deploy ke GitHub, hosting, atau platform web lainnya</p>
-                    <a href="https://github.com" target="_blank" class="action-btn">
-                        <i class="fab fa-github"></i>
-                        Deploy ke GitHub
-                    </a>
-                </div>
-            </div>
-            
-            <div class="result-content" id="promptContent">
-                <div class="prompt-output">
-                    <button class="copy-button" onclick="copyContent('prompt')">
-                        <i class="far fa-copy"></i>
-                        <span>Copy Prompt</span>
-                    </button>
-                    <div id="promptText"></div>
-                </div>
-                <div style="text-align: center; margin-top: 1rem;">
-                    <p style="color: var(--gray-600); margin-bottom: 1rem;">Gunakan prompt ini di Claude, ChatGPT, atau AI builder favorit Anda</p>
-                    <a href="https://enzostvs-deepsite.hf.space/projects/new" target="_blank" class="action-btn">
-                        <i class="fas fa-external-link-alt"></i>
-                        Buka AI DeepSite
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Lightbox -->
-    <div class="lightbox" id="testimonialLightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightboxImage" class="lightbox-image" src="" alt="Testimonial Image">
-            <p id="lightboxText" class="lightbox-text"></p>
-        </div>
-    </div>
-
-    <!-- Social Proof Popup -->
-    <div class="social-proof-popup" id="socialProofPopup">
-        <img id="popupAvatar" class="social-proof-avatar" src="" alt="Customer Avatar">
-        <p id="popupText" class="social-proof-text"></p>
-    </div>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
-        <span id="toastMessage">Berhasil!</span>
-    </div>
-
-    <script>
-        // Global variables
-        let testimonialCount = 0;
-        let currentTab = 'html';
-        let socialProofInterval;
-
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeColorPicker();
-            setupEventListeners();
-            addTestimonial(); // Add initial testimonial
-            addTestimonial(); // Add second testimonial
-            addTestimonial(); // Add third testimonial
-            
-            // Make functions globally accessible
-            window.scrollToGenerator = scrollToGenerator;
-            window.toggleTestimonial = toggleTestimonial;
-            window.toggleSocialProof = toggleSocialProof;
-            window.addTestimonial = addTestimonial;
-            window.removeTestimonial = removeTestimonial;
-            window.generateHTML = generateHTML;
-            window.generatePrompt = generatePrompt;
-            window.switchTab = switchTab;
-            window.copyContent = copyContent;
-            window.showLightbox = showLightbox;
-            window.closeLightbox = closeLightbox;
-        });
-
-        // Navigation functions
-        function scrollToGenerator() {
-            const target = document.getElementById('generator');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Setup event listeners
-        function setupEventListeners() {
-            // Color scheme change
-            const colorSchemeSelect = document.getElementById('colorScheme');
-            if (colorSchemeSelect) {
-                colorSchemeSelect.addEventListener('change', function() {
-                    const customSection = document.getElementById('customColorSection');
-                    if (customSection) {
-                        if (this.value === 'custom') {
-                            customSection.style.display = 'block';
-                        } else {
-                            customSection.style.display = 'none';
-                        }
-                    }
-                });
-            }
-        }
-
-        // Initialize color picker
-        function initializeColorPicker() {
-            const colorGrid = document.getElementById('colorGrid');
-            if (colorGrid) {
-                const predefinedColors = [
-                    '#1a237e', '#303f9f', '#3f51b5', '#7986cb',
-                    '#c5cae9', '#ffc107', '#ff9800', '#ff5722',
-                    '#e91e63', '#9c27b0', '#673ab7', '#2196f3',
-                    '#00bcd4', '#009688', '#4caf50', '#8bc34a',
-                    '#cddc39', '#ffeb3b', '#795548', '#607d8b'
-                ];
-                
-                predefinedColors.forEach(color => {
-                    const colorOption = document.createElement('div');
-                    colorOption.className = 'color-option';
-                    colorOption.style.backgroundColor = color;
-                    colorOption.onclick = () => selectColor(colorOption, color);
-                    colorGrid.appendChild(colorOption);
-                });
-            }
-        }
-
-        // Select color function
-        function selectColor(element, color) {
-            document.querySelectorAll('.color-option').forEach(el => el.classList.remove('selected'));
-            element.classList.add('selected');
-            document.getElementById('primaryColor').value = color;
-        }
-
-        // Toggle functions
-        function toggleTestimonial() {
-            const toggle = document.getElementById('testimonialToggle');
-            const wrapper = document.getElementById('testimonialWrapper');
-            const section = document.getElementById('testimonialSection');
-            
-            if (toggle && wrapper && section) {
-                toggle.classList.toggle('active');
-                wrapper.classList.toggle('active');
-                section.classList.toggle('active');
-                
-                if (toggle.classList.contains('active') && testimonialCount === 0) {
-                    addTestimonial();
-                    addTestimonial();
-                    addTestimonial();
-                }
-            }
-        }
-
-        function toggleSocialProof() {
-            const toggle = document.getElementById('socialProofToggle');
-            const wrapper = document.getElementById('socialProofWrapper');
-            const section = document.getElementBy
+                        <div class="expandable-section" id="customSocialProofSection">
+                            <div id="socialProofFields">
+                                <!-- Social Proof 1 -->
+                                <div class="social-proof-entry" id="socialProof-1">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label class="form-label">Nama Customer <span class="required">*</span></label>
+                                            <div class="input-wrapper">
+                                                <i class="fas fa-user input-icon"></i>
+                                                <input type="text" name="socialProofName-1" placeholder="Nama Customer">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Kota Customer <span class="required">*</span></label>
+                                            <div class="input-wrapper">
+                                                <i class="fas fa-map-marker-alt input-icon"></i>
+                                                <input type="text" name="socialProofCity-1" placeholder="Kota Customer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Social Proof 2 -->
+                                <div class="social-proof-entry" id="socialProof-2">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label class="form-label">Nama Customer <span class="required">*</span></label>
+                                            <div
